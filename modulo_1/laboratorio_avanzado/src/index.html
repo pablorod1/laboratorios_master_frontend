@@ -1,52 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-  </head>
-  <body>
-    <header>
-      <div class="header-logo">
-        <img src="assets/logo.png" />
-        <div class="platform-title">Warner Live</div>
-      </div>
-      <div class="header-buttons">
-        <div>Inicio</div>
-        <div>Buscar</div>
-      </div>
-    </header>
-    <main>
-      <div class="section-title">
-        Los <span id="top-text"></span> más populares hoy
-      </div>
-      <section class="top">
-        <div class="top-item"><img src="assets/top/5.jpg" /></div>
-        <div class="top-item"><img src="assets/top/4.jpg" /></div>
-        <div class="top-item"><img src="assets/top/3.jpg" /></div>
-        <div class="top-item"><img src="assets/top/2.jpg" /></div>
-        <div class="top-item"><img src="assets/top/1.jpg" /></div>
-      </section>
-      <div class="section-title">Comedias</div>
-      <section class="first">
-        <div class="item"><img src="assets/line-2/1.jpg" /></div>
-        <div class="item"><img src="assets/line-2/2.jpg" /></div>
-        <div class="item"><img src="assets/line-2/3.jpg" /></div>
-        <div class="item"><img src="assets/line-2/4.jpg" /></div>
-        <div class="item"><img src="assets/line-2/5.jpg" /></div>
-        <div class="item"><img src="assets/line-2/6.jpg" /></div>
-      </section>
-      <div class="section-title">Dramas basados en libros</div>
-      <section class="second">
-        <div class="item"><img src="assets/line-1/1.jpg" /></div>
-        <div class="item"><img src="assets/line-1/2.jpg" /></div>
-        <div class="item"><img src="assets/line-1/3.jpg" /></div>
-        <div class="item"><img src="assets/line-1/4.jpg" /></div>
-        <div class="item"><img src="assets/line-1/5.jpg" /></div>
-        <div class="item"><img src="assets/line-1/6.jpg" /></div>
-      </section>
-    </main>
-    <footer></footer>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark light;
+    }
+
+    html {
+      background: #141414;
+      font-family: "Jost", sans-serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .header-logo img {
+      width: 100px;
+    }
+
+    .header-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-buttons div {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .header-buttons div:hover {
+      background-color: #fff;
+      color: #141414;
+    }
+
+    .section-title {
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    #top-text {
+      font-weight: 700;
+    }
+
+    .top {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: start;
+      width: 100%;
+      gap: 0;
+      margin-bottom: 2rem;
+    }
+
+    .top-item {
+      min-width: 225px;
+      width: 100%;
+    }
+
+    .top-item img {
+      width: 100%;
+    }
+
+    .first,
+    .second {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-bottom: 2rem;
+      margin-inline: .5rem;
+    }
+
+    .item {
+      min-width: 250px;
+      height: 100%;
+      border: 2px solid #141414;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .item:hover {
+      transform: scale(1.1);
+    }
+
+    .item img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 1280px) {
+
+      .top .top-item:first-child,
+      .top .top-item:nth-child(2) {
+        display: none;
+      }
+
+      .platform-title {
+        display: none;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .top {
+        flex-direction: column-reverse;
+      }
+
+      .section-title {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const topText = document.getElementById("top-text");
+      if (window.innerWidth > 1280) {
+        topText.innerText = "5";
+      } else {
+        topText.innerText = "3";
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="header-logo">
+      <img src="assets/logo.png" />
+      <div class="platform-title">Warner Live</div>
+    </div>
+    <div class="header-buttons">
+      <div>Inicio</div>
+      <div>Buscar</div>
+    </div>
+  </header>
+  <main>
+    <div class="section-title">
+      Los <span id="top-text"></span> más populares hoy
+    </div>
+    <section class="top">
+      <div class="top-item"><img src="assets/top/5.jpg" /></div>
+      <div class="top-item"><img src="assets/top/4.jpg" /></div>
+      <div class="top-item"><img src="assets/top/3.jpg" /></div>
+      <div class="top-item"><img src="assets/top/2.jpg" /></div>
+      <div class="top-item"><img src="assets/top/1.jpg" /></div>
+    </section>
+    <div class="section-title">Comedias</div>
+    <section class="first">
+      <div class="item"><img src="assets/line-2/1.jpg" /></div>
+      <div class="item"><img src="assets/line-2/2.jpg" /></div>
+      <div class="item"><img src="assets/line-2/3.jpg" /></div>
+      <div class="item"><img src="assets/line-2/4.jpg" /></div>
+      <div class="item"><img src="assets/line-2/5.jpg" /></div>
+      <div class="item"><img src="assets/line-2/6.jpg" /></div>
+    </section>
+    <div class="section-title">Dramas basados en libros</div>
+    <section class="second">
+      <div class="item"><img src="assets/line-1/1.jpg" /></div>
+      <div class="item"><img src="assets/line-1/2.jpg" /></div>
+      <div class="item"><img src="assets/line-1/3.jpg" /></div>
+      <div class="item"><img src="assets/line-1/4.jpg" /></div>
+      <div class="item"><img src="assets/line-1/5.jpg" /></div>
+      <div class="item"><img src="assets/line-1/6.jpg" /></div>
+    </section>
+  </main>
+  <footer></footer>
+</body>
+
 </html>
