@@ -8,9 +8,9 @@
   @return mix(white, $color, $amount);
 }
 
-$base-red: #f44336;
-$base-blue: #2196f3;
-$base-green: #4caf50;
+$base-color-1: #f44336;
+$base-color-2: #2196f3;
+$base-color-3: #4caf50;
 
 html {
   font-family: "Poppins", sans-serif;
@@ -37,32 +37,32 @@ html {
     color: rgb(74, 179, 214);
   }
   .darken-4 {
-    background-color: darken($base-red, 40%);
+    background-color: darken($base-color-1, 40%);
   }
   .darken-3 {
-    background-color: darken($base-red, 30%);
+    background-color: darken($base-color-1, 30%);
   }
   .darken-2 {
-    background-color: darken($base-red, 20%);
+    background-color: darken($base-color-1, 20%);
   }
   .darken-1 {
-    background-color: darken($base-red, 10%);
+    background-color: darken($base-color-1, 10%);
   }
   .base-color {
-    background-color: $base-red;
+    background-color: $base-color-1;
     color: #fff;
   }
   .lighten-1 {
-    background-color: lighten($base-red, 10%);
+    background-color: lighten($base-color-1, 10%);
   }
   .lighten-2 {
-    background-color: lighten($base-red, 20%);
+    background-color: lighten($base-color-1, 20%);
   }
   .lighten-3 {
-    background-color: lighten($base-red, 30%);
+    background-color: lighten($base-color-1, 30%);
   }
   .lighten-4 {
-    background-color: lighten($base-red, 40%);
+    background-color: lighten($base-color-1, 40%);
   }
 }
 
@@ -71,32 +71,32 @@ html {
     color: rgb(169, 169, 32);
   }
   .darken-4 {
-    background-color: darken($base-blue, 40%);
+    background-color: darken($base-color-2, 40%);
   }
   .darken-3 {
-    background-color: darken($base-blue, 30%);
+    background-color: darken($base-color-2, 30%);
   }
   .darken-2 {
-    background-color: darken($base-blue, 20%);
+    background-color: darken($base-color-2, 20%);
   }
   .darken-1 {
-    background-color: darken($base-blue, 10%);
+    background-color: darken($base-color-2, 10%);
   }
   .base-color {
-    background-color: $base-blue;
+    background-color: $base-color-2;
     color: #fff;
   }
   .lighten-1 {
-    background-color: lighten($base-blue, 10%);
+    background-color: lighten($base-color-2, 10%);
   }
   .lighten-2 {
-    background-color: lighten($base-blue, 20%);
+    background-color: lighten($base-color-2, 20%);
   }
   .lighten-3 {
-    background-color: lighten($base-blue, 30%);
+    background-color: lighten($base-color-2, 30%);
   }
   .lighten-4 {
-    background-color: lighten($base-blue, 40%);
+    background-color: lighten($base-color-2, 40%);
   }
 }
 
@@ -105,31 +105,31 @@ html {
     color: rgb(101, 19, 101);
   }
   .darken-4 {
-    background-color: darken($base-green, 40%);
+    background-color: darken($base-color-3, 40%);
   }
   .darken-3 {
-    background-color: darken($base-green, 30%);
+    background-color: darken($base-color-3, 30%);
   }
   .darken-2 {
-    background-color: darken($base-green, 20%);
+    background-color: darken($base-color-3, 20%);
   }
   .darken-1 {
-    background-color: darken($base-green, 10%);
+    background-color: darken($base-color-3, 10%);
   }
   .base-color {
-    background-color: $base-green;
+    background-color: $base-color-3;
     color: #fff;
   }
   .lighten-1 {
-    background-color: lighten($base-green, 10%);
+    background-color: lighten($base-color-3, 10%);
   }
   .lighten-2 {
-    background-color: lighten($base-green, 20%);
+    background-color: lighten($base-color-3, 20%);
   }
   .lighten-3 {
-    background-color: lighten($base-green, 30%);
+    background-color: lighten($base-color-3, 30%);
   }
   .lighten-4 {
-    background-color: lighten($base-green, 40%);
+    background-color: lighten($base-color-3, 40%);
   }
 }
