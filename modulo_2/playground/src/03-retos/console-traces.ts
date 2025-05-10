@@ -1,4 +1,3 @@
-console.log("************** CONSOLE TRACES *********************");
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const showMessage = async ([time, message]) => {
@@ -20,6 +19,7 @@ const run = async (triggers) => {
   });
   setTimeout(() => {
     console.log("first");
+    console.log("************** CONSOLE TRACES *********************");
   }, 100);
 };
 
