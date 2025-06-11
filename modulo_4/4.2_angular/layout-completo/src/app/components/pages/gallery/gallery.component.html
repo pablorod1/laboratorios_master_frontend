@@ -1,0 +1,64 @@
+<!-- TODO: DIRECTIVA ROTATE -->
+
+<section class="gallery">
+  <div class="gallery-container">
+    <!-- Imagen seleccionada -->
+    <div class="selected-image-section">
+      <div class="selected-image-wrapper">
+        <img rotate step="15" [src]="selectedImage.src" [alt]="selectedImage.title"
+          [style.transform]="'scale(' + imageScale + ')'" class="selected-image">
+      </div>
+      <h3>{{ selectedImage.title }}</h3>
+    </div>
+
+    <!-- Listado de imágenes (thumbnails) -->
+    <div class="thumbnails-section">
+      <h4>Galería de imágenes</h4>
+
+
+
+      <div class="thumbnails-list">
+        <img rotate *ngFor="let image of images | slice:startIndex:endIndex; let i = index" [src]="image.src"
+          [alt]="image.title" [class.active]="(startIndex + i) === selectedImageIndex" (click)="selectImage(i)"
+          class="thumbnail">
+      </div>
+    </div>
+
+    <!-- Botonera -->
+    <div class="controls-section">
+      <button (click)="previousImage()" [disabled]="isFirstImage" class="control-btn">
+        Anterior
+      </button>
+
+      <button (click)="nextImage()" [disabled]="isLastImage" class="control-btn">
+        Siguiente
+      </button>
+
+      <button (click)="zoomIn()" class="control-btn">
+        Aumentar
+      </button>
+
+      <button (click)="zoomOut()" class="control-btn">
+        Disminuir
+      </button>
+
+      <button *ngIf="!isPlaying" (click)="play()" class="control-btn play-btn">
+        Play
+      </button>
+
+      <button *ngIf="isPlaying" (click)="stop()" class="control-btn stop-btn">
+        Stop
+      </button>
+    </div>
+    <!-- Pagination controls for thumbnails -->
+    <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="isFirstPage" class="pagination-btn">
+        ←
+      </button>
+      <span class="page-info">Página {{ currentPage + 1 }} de {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="isLastPage" class="pagination-btn">
+        →
+      </button>
+    </div>
+  </div>
+</section>

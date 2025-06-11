@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <div class="logo-container">
+      <img src="/logo_hd_opt.webp" alt="Logo" class="logo" />
+      <div class="logo-text">
+        <h1>Negoco Cloud</h1>
+      </div>
+    </div>
+
+    @if (!isLoggedIn) {
+    <public-menu></public-menu>
+    }
+
+    @if (isLoggedIn) {
+    <private-menu [username]="username"></private-menu>
+    }
+  </nav>
+</header>

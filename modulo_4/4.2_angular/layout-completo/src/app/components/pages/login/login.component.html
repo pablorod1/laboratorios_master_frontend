@@ -1,0 +1,52 @@
+<section class="section">
+  <h1 class="title">
+    Iniciar sesión
+  </h1>
+  <p class="subtitle">
+    Introduce tus credenciales para acceder a tu cuenta de Negoco Cloud.
+  </p>
+  <mat-card class="login-card" appearance="raised">
+    <mat-card-header>
+      <div>
+        <p>Usuario: master&#64;lemoncode.net</p>
+        <p>Contraseña: 12345678</p>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="form-container">
+        <mat-form-field class="input-container" appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input type="text" matInput [formControl]="usernameFormControl" [errorStateMatcher]="matcher" required
+            placeholder="Introduce tu nombre de usuario..." value="">
+          @if (usernameFormControl.hasError('required')) {
+          <mat-error>Introduce un nombre de usuario</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="input-container" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher" required matInput
+            placeholder="Introduce tu contraseña..." value="">
+          @if (passwordFormControl.hasError('required')) {
+          <mat-error>Introduce una contraseña válida</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      @if (errorMessage) {
+      <div class="error-message" style="color: red; margin: 10px 0;">
+        {{ errorMessage }}
+      </div>
+      }
+      <div class="btn-container">
+        <button (click)="login()" mat-flat-button
+          [disabled]="isLoading || usernameFormControl.invalid || passwordFormControl.invalid">
+          @if (!isLoading) {
+          Iniciar Sesión
+          }
+          @if (isLoading) {
+          Iniciando sesión...
+          }
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
