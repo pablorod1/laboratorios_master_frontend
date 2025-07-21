@@ -1,0 +1,17 @@
+$title-color: indianred;
+
+.title{
+  color: $title-color;
+  font-size: 2em;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+img{
+  width: 200px;
+  margin-block: 2rem;
+
+}
