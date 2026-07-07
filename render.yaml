@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: lemoncode-modulo-7
+    runtime: docker
+    plan: free
+    branch: main
+    dockerfilePath: modulo_7/Dockerfile
+    dockerContext: modulo_7
+    healthCheckPath: /
+    autoDeployTrigger: commit
+    buildFilter:
+      paths:
+        - modulo_7/**
+        - render.yaml
+    envVars:
+      - key: BASE_PATH
+        value: /
