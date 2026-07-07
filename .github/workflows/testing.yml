@@ -1,0 +1,91 @@
+name: Testing
+
+on:
+  pull_request:
+    branches:
+      - main
+      - feature/laboratorio-testing-obligatorio
+  push:
+    branches:
+      - main
+      - feature/laboratorio-testing-obligatorio
+      - feature/laboratorio-testing-opcional
+
+jobs:
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: modulo_5/00-boilerplate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: modulo_5/00-boilerplate/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm test
+
+  cypress-e2e:
+    name: Cypress e2e
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: modulo_5/00-boilerplate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: modulo_5/00-boilerplate/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          working-directory: modulo_5/00-boilerplate
+          start: npm run start:dev:e2e
+          wait-on: http://127.0.0.1:5173
+          command: npm run e2e:cypress:run
+
+  playwright-e2e:
+    name: Playwright e2e
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: modulo_5/00-boilerplate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: modulo_5/00-boilerplate/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright tests
+        run: npm run e2e:playwright
