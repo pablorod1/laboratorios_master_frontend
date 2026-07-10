@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -6,5 +6,6 @@ export default defineConfig({
     restoreMocks: true,
     environment: 'jsdom',
     setupFiles: ['./config/test/setup.ts'],
+    exclude: [...configDefaults.exclude, 'cypress/**', 'e2e/**'],
   },
 });
