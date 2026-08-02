@@ -10,10 +10,17 @@ Entrega del laboratorio del Módulo 0 del Máster en Desarrollo Frontend.
 
 - **Figma (entregable principal):**
   [Módulo 0 — HBO Max móvil](https://www.figma.com/design/wuFygMOQ8O29sAz5sT9qt3/Modulo-0---HBO-Max-movil)
+  — las tres partes, una por página.
 - **Dossier completo:** [`index.html`](./index.html) — las tres partes en un
   único documento. Clonar el repositorio y abrirlo en el navegador.
 - **Versión imprimible:** [`entrega.pdf`](./entrega.pdf)
 - **Vista rápida:** [`entrega-preview.png`](./entrega-preview.png)
+
+El archivo de Figma contiene 21 variables locales con *scopes* y *code syntax*,
+5 estilos de texto y 5 sets de componentes (`Button`, `Metadata Pill`, `Icon`,
+`Icon Action` y `Content Card`) con auto layout y todos los fills, radios y
+espaciados enlazados a variables. [`GUIA-FIGMA.md`](./GUIA-FIGMA.md) documenta
+su estructura y las decisiones de construcción.
 
 ## Contenido
 
@@ -52,13 +59,17 @@ modulo_0/
 └── task.md               Enunciado del laboratorio
 ```
 
-## Construcción del archivo de Figma
+## Estructura del archivo de Figma
 
-[`GUIA-FIGMA.md`](./GUIA-FIGMA.md) contiene el orden de ejecución (variables →
-estilos de texto → componentes → pantallas), la especificación exacta de cada
-componente con sus variantes y propiedades, el desglose de la pantalla de alta
-fidelidad bloque a bloque, la checklist previa a la entrega y todos los textos
-listos para copiar y pegar.
+| Página | Contenido |
+| ------ | --------- |
+| `01 - Evaluacion heuristica` | Alcance, método y las 10 heurísticas con severidad |
+| `02 - Gestalt + Low-fi` | 8 principios con demo visual y el flujo low-fi de 5 pantallas |
+| `03 - High-fi + Components` | Foundations, 5 sets de componentes, antes/después y handoff anotado |
+
+[`GUIA-FIGMA.md`](./GUIA-FIGMA.md) documenta la especificación de cada
+componente con sus variantes y propiedades, el desglose de la pantalla bloque a
+bloque, las notas de construcción y todos los textos.
 
 ## Regenerar las exportaciones
 

@@ -11,28 +11,37 @@ Los textos de las Partes 1 y 2 están al final, listos para copiar y pegar.
 
 ## Estado actual del archivo
 
-Buena parte ya está construida directamente en Figma. Esto es lo que hay y lo
-que falta:
+El archivo de Figma **está construido**. Esta guía queda como documentación de
+lo que contiene y de las decisiones tomadas.
 
 | Bloque | Estado |
 | ------ | ------ |
-| Página `01 - Evaluacion heuristica` | ✅ Contenido de la Parte 1 |
-| Variables `color` (12), `spacing` (7), `radius` (4) | ✅ Creadas, con *scopes* y *code syntax* |
-| Estilos de texto (5) | ✅ Creados y alineados al dossier |
-| Componente `Button` | ✅ 9 variantes · props `Label`, `Icon` |
-| Componente `Metadata Pill` | ✅ 3 tonos · prop `Label` |
-| Componente `Icon` | ✅ 5 glifos, para INSTANCE_SWAP |
-| Componente `Icon Action` | ✅ 2 estados · área táctil 44 px · prop de icono INSTANCE_SWAP |
-| Componente `Content Card` | ✅ 6 variantes (Type × Progress) · props `Title`, `Meta` |
-| Sección `Foundations` (página 03) | ✅ 12 muestras de color con ratios, escala tipográfica, espaciado y radios |
-| **Pantallas high-fi** (página 03) | ❌ **Pendiente** — apartado 4 de esta guía |
-| **Página `02 - Gestalt + Low-fi`** | ❌ **Pendiente** — solo tiene la cabecera |
-| Permisos de compartición | ❌ **Pendiente** |
+| Página `01 - Evaluacion heuristica` | ✅ Parte 1 |
+| Página `02 - Gestalt + Low-fi` | ✅ 8 principios con demo visual + flujo low-fi de 5 pantallas con transiciones etiquetadas |
+| Página `03 - High-fi + Components` | ✅ Foundations, componentes, antes/después y handoff anotado |
+| Variables `color` (12), `spacing` (7), `radius` (4) | ✅ Con *scopes* y *code syntax* |
+| Estilos de texto (5) | ✅ Alineados al dossier |
+| `Button` | ✅ 9 variantes · props `Label`, `Icon` |
+| `Metadata Pill` | ✅ 3 tonos · prop `Label` |
+| `Icon` | ✅ 5 glifos para INSTANCE_SWAP |
+| `Icon Action` | ✅ 2 estados · área táctil 44 px · icono por INSTANCE_SWAP |
+| `Content Card` | ✅ 6 variantes (Type × Progress) · props `Title`, `Meta` |
+| Pantallas | ✅ «Antes», «Después» y frame anotado con 7 marcadores de handoff |
+| **Permisos de compartición** | ⚠️ **Los tiene que abrir el propietario del archivo** |
 
-> **Nota sobre el plan de Figma.** La construcción automatizada se detuvo al
-> alcanzar el límite de llamadas del plan Starter. Lo que falta se puede montar
-> a mano siguiendo esta guía, o automatizar de nuevo cuando el límite se
-> reponga.
+> **Lo único pendiente:** `Share → Anyone with the link → can view`. El
+> enunciado insiste en los permisos y sin ellos la entrega no se puede evaluar.
+
+### Notas de construcción
+
+Tres cosas que costaron encontrar, por si hay que retocar el archivo:
+
+- `INSTANCE_SWAP` rechaza el `key` de un componente tanto en
+  `addComponentProperty` como en `setProperties`. Hay que pasar el **node ID**.
+- `page.children.length` devuelve `0` en páginas que no se han cargado. Sin un
+  `setCurrentPageAsync` previo parece que la página está vacía cuando no lo está.
+- Rotar un rectángulo pivota sobre su origen, lo que hace muy difícil cruzar dos
+  líneas. Para eso es más fiable `createVector()` con `vectorPaths` explícitos.
 
 ---
 
