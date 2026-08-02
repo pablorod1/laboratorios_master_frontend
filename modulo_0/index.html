@@ -1,0 +1,2009 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Módulo 0 · Laboratorio de UX — HBO Max móvil</title>
+    <meta
+      name="description"
+      content="Evaluación heurística, principios de Gestalt y rediseño de alta fidelidad del flujo de descubrimiento y reproducción de HBO Max en móvil."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <!-- ===================== PORTADA ===================== -->
+    <header class="cover">
+      <div class="wrap">
+        <span class="eyebrow">Módulo 0 · Laboratorio de UX</span>
+        <h1>HBO&nbsp;Max<br />móvil</h1>
+        <p class="sub">
+          Evaluación heurística, análisis de principios de Gestalt y rediseño de
+          alta fidelidad del flujo de descubrimiento y reproducción de
+          contenido.
+        </p>
+
+        <dl class="cover-meta">
+          <div>
+            <dt>Producto</dt>
+            <dd>HBO Max</dd>
+          </div>
+          <div>
+            <dt>Plataforma</dt>
+            <dd>App móvil · iOS</dd>
+          </div>
+          <div>
+            <dt>Flujo analizado</dt>
+            <dd>Descubrir → decidir → reproducir</dd>
+          </div>
+          <div>
+            <dt>Pantalla rediseñada</dt>
+            <dd>Ficha de detalle</dd>
+          </div>
+        </dl>
+
+        <nav class="toc" aria-label="Índice del documento">
+          <a href="#parte-1">
+            <span class="n">PARTE 1</span>
+            <span class="t">Evaluación heurística</span>
+            <span class="d"
+              >Las 10 heurísticas de Nielsen aplicadas al flujo, con evidencia y
+              severidad.</span
+            >
+          </a>
+          <a href="#parte-2">
+            <span class="n">PARTE 2</span>
+            <span class="t">Gestalt y prototipo low-fi</span>
+            <span class="d"
+              >Ocho principios de organización visual y el flujo principal en
+              baja fidelidad.</span
+            >
+          </a>
+          <a href="#parte-3">
+            <span class="n">PARTE 3</span>
+            <span class="t">Rediseño de alta fidelidad</span>
+            <span class="d"
+              >Foundations, librería de componentes, antes/después y
+              especificaciones de handoff.</span
+            >
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- ===================== PARTE 1 ===================== -->
+      <section class="part" id="parte-1">
+        <div class="part-head">
+          <span class="eyebrow">Parte 1</span>
+          <h2>Evaluación heurística</h2>
+          <p class="intro">
+            HBO Max es una de las aplicaciones que más uso y una de las que
+            mejor resuelve el problema de fondo del vídeo bajo demanda: hay
+            demasiado catálogo y muy poco tiempo. El análisis no cubre toda la
+            aplicación, sino el recorrido que concentra la decisión del usuario.
+          </p>
+        </div>
+
+        <div class="grid g2">
+          <div class="callout">
+            <strong>Alcance.</strong> Se evalúa el flujo
+            <em>descubrir → decidir → reproducir</em>: la pantalla de inicio, la
+            búsqueda, la ficha de detalle de un título y el reproductor. Quedan
+            fuera el alta de cuenta, la gestión de suscripción y la experiencia
+            en televisor.
+          </div>
+          <div class="callout">
+            <strong>Contexto de uso.</strong> Usuario suscriptor, sesiones
+            cortas de noche, con una mano, en un sofá o en transporte público, a
+            menudo con red inestable y frecuentemente retomando algo que ya
+            había empezado.
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-head">
+            <span class="kicker">Método</span>
+            <h3>Cómo se ha evaluado</h3>
+            <p>
+              Recorrido del flujo anotando fricciones, revisión heurística
+              principio por principio y puntuación de cada hallazgo con la
+              escala de severidad de Nielsen, que combina frecuencia, impacto y
+              persistencia del problema. La severidad es lo que permite
+              priorizar: no todos los incumplimientos merecen rediseño.
+            </p>
+          </div>
+
+          <div class="sev-legend">
+            <span><i style="background: #4b5563"></i>0 · No es un problema</span>
+            <span><i style="background: var(--sev-1)"></i>1 · Cosmético</span>
+            <span><i style="background: var(--sev-2)"></i>2 · Menor</span>
+            <span><i style="background: var(--sev-3)"></i>3 · Mayor</span>
+            <span><i style="background: var(--sev-4)"></i>4 · Catastrófico</span>
+          </div>
+
+          <div class="heuristics">
+            <!-- 1 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">01</span>
+                <h4>Visibilidad del estado del sistema</h4>
+                <span class="sev sev-2"><i></i>Sev. 2</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                La fila «Continuar viendo» dibuja una barra de progreso sobre
+                cada miniatura, así que el usuario sabe por dónde iba sin
+                abrir la ficha. En el reproductor, la carga se comunica con un
+                indicador sobre el fotograma y el desplazamiento por la línea de
+                tiempo muestra en todo momento el tiempo restante.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                El estado que no se comunica es el de sincronización entre
+                dispositivos: si dejas un episodio a medias en el televisor, el
+                móvil tarda en reflejarlo y no explica por qué. Marcar la fila
+                como «sincronizando» evitaría la sensación de progreso perdido.
+              </p>
+            </article>
+
+            <!-- 2 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">02</span>
+                <h4>Correspondencia entre el sistema y el mundo real</h4>
+                <span class="sev sev-1"><i></i>Sev. 1</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                El vocabulario es el del mundo audiovisual y no el del sistema:
+                temporada, episodio, tráiler, T1:E1. Los pósteres reproducen el
+                arte oficial que el usuario ya ha visto en marquesinas o redes
+                sociales, de modo que reconoce el título antes incluso de leer
+                su nombre.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                La ambigüedad aparece en los formatos híbridos: un especial, un
+                documental o un evento en directo se presentan con la misma
+                tarjeta que una película. El usuario no sabe si va a ver veinte
+                minutos o dos horas hasta que entra. Una etiqueta de formato en
+                la propia tarjeta lo resolvería.
+              </p>
+            </article>
+
+            <!-- 3 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">03</span>
+                <h4>Control y libertad del usuario</h4>
+                <span class="sev sev-2"><i></i>Sev. 2</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                Todas las pantallas mantienen una salida visible: flecha atrás
+                en la ficha, aspa en el reproductor. Además el reproductor
+                permite retroceder diez segundos, saltar la cabecera y cambiar
+                de episodio sin volver a la ficha, así que el usuario nunca
+                queda atrapado.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                Falta el deshacer donde más duele. Eliminar un título de
+                «Continuar viendo» es inmediato y silencioso, y «Saltar intro»
+                no ofrece camino de vuelta si se pulsa por error. Un aviso
+                temporal con acción «Deshacer» cubriría ambos casos.
+              </p>
+            </article>
+
+            <!-- 4 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">04</span>
+                <h4>Consistencia y estándares</h4>
+                <span class="sev sev-1"><i></i>Sev. 1</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                Respeta los patrones que el usuario ya conoce de otras
+                plataformas: barra de pestañas inferior persistente, carruseles
+                horizontales con título de fila, gesto de deslizar para navegar
+                y controles de reproducción en las posiciones esperadas.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                La inconsistencia está en las acciones secundarias: «Mi lista»
+                se representa unas veces con un signo «+» y otras con un icono
+                de marcador, y descargar aparece en la ficha, en el episodio y
+                en el menú contextual con jerarquías distintas. Un icono y una
+                posición únicos por acción.
+              </p>
+            </article>
+
+            <!-- 5 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">05</span>
+                <h4>Prevención de errores</h4>
+                <span class="sev sev-2"><i></i>Sev. 2</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                Los perfiles infantiles y el PIN de control parental impiden por
+                diseño el acceso a contenido no apto, en lugar de limitarse a
+                advertir después. La clasificación por edad se muestra antes de
+                iniciar la reproducción.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                No previene los errores caros en movilidad: reproducir en
+                calidad alta con datos móviles o descargar una temporada entera
+                sin avisar del espacio que ocupará. Un aviso previo, con la
+                opción de continuar, evitaría consumo de datos o de
+                almacenamiento no deseado.
+              </p>
+            </article>
+
+            <!-- 6 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">06</span>
+                <h4>Reconocimiento antes que recuerdo</h4>
+                <span class="sev sev-2"><i></i>Sev. 2</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                Toda la navegación se apoya en reconocer y no en recordar:
+                pósteres, logotipos de título, filas etiquetadas por género y la
+                propia fila de «Continuar viendo» evitan que el usuario tenga
+                que teclear nada para llegar a lo que le interesa.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                La búsqueda sí exige recuerdo. Al volver a ella el campo aparece
+                vacío y se pierden tanto la consulta anterior como los filtros
+                aplicados, así que una exploración larga hay que reconstruirla
+                desde cero. Conservar consultas y filtros recientes descargaría
+                la memoria del usuario.
+              </p>
+            </article>
+
+            <!-- 7 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">07</span>
+                <h4>Flexibilidad y eficiencia de uso</h4>
+                <span class="sev sev-3"><i></i>Sev. 3</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                Existen atajos reales para el usuario veterano: «Continuar
+                viendo» ocupa la primera posición del inicio, las descargas
+                permiten consumo sin red y la reproducción automática encadena
+                el siguiente episodio sin intervención.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                Es la heurística con más recorrido. Cualquier acción frecuente
+                —añadir a la lista, descargar, ver el tráiler— obliga a entrar
+                en la ficha, volver atrás y perder la posición del carrusel. Una
+                pulsación larga sobre la tarjeta que despliegue esas acciones
+                ahorraría dos pantallas en el caso de uso más habitual.
+              </p>
+            </article>
+
+            <!-- 8 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">08</span>
+                <h4>Diseño estético y minimalista</h4>
+                <span class="sev sev-2"><i></i>Sev. 2</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                El tema oscuro reduce el brillo del contenedor y convierte el
+                arte de las portadas en el único foco luminoso de la pantalla.
+                En el reproductor los controles se ocultan solos tras unos
+                segundos y dejan la imagen limpia.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                La ficha de detalle acumula ruido: cuatro acciones secundarias
+                del mismo tamaño y color compiten con el botón de reproducir, y
+                los metadatos se leen como una frase corrida en vez de como
+                datos escaneables. Bajar el peso visual de lo secundario
+                devuelve la atención al CTA.
+              </p>
+            </article>
+
+            <!-- 9 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">09</span>
+                <h4>Reconocer, diagnosticar y recuperarse de errores</h4>
+                <span class="sev sev-3"><i></i>Sev. 3</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                Los fallos de reproducción muestran un mensaje con opción de
+                reintentar en lugar de dejar la pantalla en negro, y la app
+                conserva la posición del contenido para no obligar a empezar de
+                cero tras el fallo.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                El mensaje es genérico y suele acompañarse de un código que no
+                significa nada para el usuario. Sin conexión, límite de
+                dispositivos, título retirado del catálogo o no disponible en la
+                región exigen acciones distintas: el error debería nombrar la
+                causa y ofrecer directamente la acción que la resuelve.
+              </p>
+            </article>
+
+            <!-- 10 -->
+            <article class="heuristic">
+              <div class="heuristic-top">
+                <span class="heuristic-num">10</span>
+                <h4>Ayuda y documentación</h4>
+                <span class="sev sev-2"><i></i>Sev. 2</span>
+              </div>
+              <p class="finding evidence">
+                <span class="lbl">Evidencia</span>
+                Existe un centro de ayuda accesible desde los ajustes de la
+                cuenta, con cobertura suficiente para incidencias de
+                suscripción, facturación o dispositivos vinculados.
+              </p>
+              <p class="finding fix">
+                <span class="lbl">Mejora propuesta</span>
+                La ayuda vive lejos de donde surge la duda. Cuánto ocupa una
+                descarga, cuánto tiempo sigue disponible una vez descargada o
+                cómo fijar el idioma por defecto se resuelven en un artículo
+                externo, cuando bastaría un icono de información junto al propio
+                control.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Síntesis -->
+        <div class="block">
+          <div class="block-head">
+            <span class="kicker">Síntesis</span>
+            <h3>Dónde duele más</h3>
+            <p>
+              Ninguna heurística se incumple de forma grave: HBO Max es un
+              producto maduro y la mayoría de hallazgos son cosméticos o
+              menores. Los dos de severidad 3 encabezan la priorización, junto
+              con un tercero que, aun siendo menor, condiciona por completo la
+              pantalla que se rediseña.
+            </p>
+          </div>
+
+          <div class="grid g2" style="gap: 30px; align-items: start">
+            <div class="card">
+              <h4 style="margin-bottom: 18px">Severidad por heurística</h4>
+              <div class="sev-chart">
+                <div class="sev-row">
+                  <span class="name">01 · Visibilidad del estado</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 50%; background: var(--sev-2)"
+                    ></span
+                  ></span>
+                  <span class="val">2</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">02 · Mundo real</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 25%; background: var(--sev-1)"
+                    ></span
+                  ></span>
+                  <span class="val">1</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">03 · Control y libertad</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 50%; background: var(--sev-2)"
+                    ></span
+                  ></span>
+                  <span class="val">2</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">04 · Consistencia</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 25%; background: var(--sev-1)"
+                    ></span
+                  ></span>
+                  <span class="val">1</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">05 · Prevención de errores</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 50%; background: var(--sev-2)"
+                    ></span
+                  ></span>
+                  <span class="val">2</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">06 · Reconocer &gt; recordar</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 50%; background: var(--sev-2)"
+                    ></span
+                  ></span>
+                  <span class="val">2</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">07 · Flexibilidad y eficiencia</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 75%; background: var(--sev-3)"
+                    ></span
+                  ></span>
+                  <span class="val">3</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">08 · Estético y minimalista</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 50%; background: var(--sev-2)"
+                    ></span
+                  ></span>
+                  <span class="val">2</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">09 · Recuperación de errores</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 75%; background: var(--sev-3)"
+                    ></span
+                  ></span>
+                  <span class="val">3</span>
+                </div>
+                <div class="sev-row">
+                  <span class="name">10 · Ayuda y documentación</span>
+                  <span class="track"
+                    ><span
+                      class="fill"
+                      style="width: 50%; background: var(--sev-2)"
+                    ></span
+                  ></span>
+                  <span class="val">2</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px">
+              <article class="card">
+                <h4>
+                  <span class="sev sev-3" style="margin-right: 8px"
+                    ><i></i>P1</span
+                  >
+                  Las acciones frecuentes cuestan demasiado
+                </h4>
+                <p style="margin-top: 10px">
+                  Guardar, descargar o previsualizar exige entrar en la ficha y
+                  volver. Es el problema con más impacto porque afecta al gesto
+                  que más se repite en toda la aplicación.
+                </p>
+              </article>
+              <article class="card">
+                <h4>
+                  <span class="sev sev-3" style="margin-right: 8px"
+                    ><i></i>P2</span
+                  >
+                  Los errores no dicen qué hacer
+                </h4>
+                <p style="margin-top: 10px">
+                  Un mensaje genérico con un código deja al usuario sin siguiente
+                  paso justo en el momento de máxima frustración: cuando ya había
+                  decidido ver algo.
+                </p>
+              </article>
+              <article class="card">
+                <h4>
+                  <span class="sev sev-2" style="margin-right: 8px"
+                    ><i></i>P3</span
+                  >
+                  La ficha compite consigo misma
+                </h4>
+                <p style="margin-top: 10px">
+                  Demasiados elementos con el mismo peso visual retrasan la única
+                  decisión que importa en esa pantalla: darle a reproducir.
+                </p>
+              </article>
+              <div class="callout" style="border-left-color: var(--ok)">
+                <strong>Foco del rediseño.</strong> La Parte 3 ataca
+                <strong>P3</strong> y parte de <strong>P1</strong>, porque ambos
+                se resuelven dentro de la ficha de detalle, que es además la
+                pantalla que concentra la decisión de todo el flujo.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PARTE 2 ===================== -->
+      <section class="part" id="parte-2">
+        <div class="part-head">
+          <span class="eyebrow">Parte 2</span>
+          <h2>Principios de Gestalt y prototipo de baja fidelidad</h2>
+          <p class="intro">
+            Las heurísticas explican si la aplicación funciona; los principios de
+            Gestalt explican por qué se entiende de un vistazo. En una interfaz
+            que muestra decenas de portadas por pantalla, la agrupación visual es
+            lo que evita que el catálogo se perciba como ruido.
+          </p>
+        </div>
+
+        <div class="block" style="margin-top: 0">
+          <div class="block-head">
+            <span class="kicker">Ocho principios</span>
+            <h3>Cómo los aplica HBO Max</h3>
+            <p>
+              Cada tarjeta muestra el principio en abstracto y, debajo, dónde
+              aparece exactamente dentro de la aplicación.
+            </p>
+          </div>
+
+          <div class="gestalt">
+            <article>
+              <div class="demo">
+                <div class="d-prox">
+                  <div>
+                    <i class="dot"></i><i class="dot"></i><i class="dot"></i
+                    ><i class="dot"></i>
+                  </div>
+                  <div>
+                    <i class="dot"></i><i class="dot"></i><i class="dot"></i
+                    ><i class="dot"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="body">
+                <h4>Proximidad</h4>
+                <p>
+                  Los elementos cercanos entre sí se perciben como un grupo,
+                  aunque sean idénticos a los del grupo vecino.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> el espacio vertical entre carruseles es mayor
+                  que el hueco entre pósteres de una misma fila. Por eso «Top 10»
+                  y «Porque viste…» se leen como categorías separadas sin
+                  necesidad de ningún separador.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <div class="demo">
+                <div class="d-sim">
+                  <i class="dot"></i><i class="dot"></i><i class="dot on"></i
+                  ><i class="dot"></i><i class="dot"></i><i class="dot"></i
+                  ><i class="dot on"></i><i class="dot"></i><i class="dot"></i
+                  ><i class="dot"></i><i class="dot on"></i><i class="dot"></i>
+                </div>
+              </div>
+              <div class="body">
+                <h4>Similitud</h4>
+                <p>
+                  Lo que comparte forma, tamaño o color se agrupa mentalmente y
+                  lo que rompe el patrón destaca.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> todos los pósteres usan la misma proporción y
+                  el mismo radio, de modo que el ojo los compara sin leer. El
+                  distintivo «Nuevo episodio» funciona precisamente porque rompe
+                  esa uniformidad.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <div class="demo">
+                <div class="d-reg">
+                  <div><i></i><i></i><i></i></div>
+                  <div class="on"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div class="body">
+                <h4>Región común</h4>
+                <p>
+                  Los elementos encerrados en un mismo contorno o fondo se
+                  perciben como una unidad, aunque estén separados.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> la ficha de detalle agrupa título,
+                  metadatos, sinopsis y acciones sobre una misma superficie
+                  oscura continua, lo que comunica que todo se refiere al mismo
+                  título y no al carrusel del que venías.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <div class="demo"><div class="d-clos"></div></div>
+              <div class="body">
+                <h4>Cierre</h4>
+                <p>
+                  El cerebro completa las formas incompletas para percibir una
+                  figura entera y reconocible.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> los carruseles cortan el último póster a
+                  media anchura. Ese recorte parcial es lo que hace entender que
+                  la fila continúa y que se puede desplazar hacia la derecha, sin
+                  ninguna flecha ni instrucción.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <div class="demo">
+                <div class="d-cont"><span></span><span></span></div>
+              </div>
+              <div class="body">
+                <h4>Continuidad</h4>
+                <p>
+                  La mirada sigue líneas y trayectorias continuas antes que
+                  saltar entre elementos sueltos.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> los pósteres de una fila comparten línea base
+                  y alineación estricta, lo que crea un raíl horizontal que
+                  arrastra la vista. El desplazamiento vertical entre filas y el
+                  horizontal dentro de cada fila no se confunden nunca.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <div class="demo"><div class="d-fig"><b></b></div></div>
+              <div class="body">
+                <h4>Figura y fondo</h4>
+                <p>
+                  Se distingue automáticamente el objeto de interés del plano
+                  sobre el que descansa.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> el fondo casi negro no compite con nada, así
+                  que las portadas y el botón blanco de reproducir se leen como
+                  figura. El degradado que oscurece la parte baja del hero existe
+                  justo para sostener el texto sobre la imagen.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <div class="demo">
+                <div class="d-dest">
+                  <i class="dot"></i><i class="dot mv"></i><i class="dot"></i
+                  ><i class="dot mv"></i><i class="dot"></i>
+                </div>
+              </div>
+              <div class="body">
+                <h4>Destino común</h4>
+                <p>
+                  Los elementos que se mueven juntos y en la misma dirección se
+                  perciben como pertenecientes al mismo conjunto.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> al deslizar un carrusel, sus pósteres se
+                  desplazan solidariamente mientras el resto de filas permanece
+                  quieto. El movimiento compartido confirma qué elementos forman
+                  esa categoría.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <div class="demo">
+                <div class="d-conn">
+                  <i></i><u></u><i></i><span class="gap"></span><i></i>
+                </div>
+              </div>
+              <div class="body">
+                <h4>Conexión uniforme</h4>
+                <p>
+                  Los elementos unidos por una línea o un vínculo visual se
+                  perciben más relacionados que los que solo están cerca.
+                </p>
+                <p class="app">
+                  <b>En la app:</b> la barra de progreso pegada al borde inferior
+                  de la miniatura pertenece inequívocamente a ese título y no al
+                  de al lado. Lo mismo hace el subrayado de la pestaña activa con
+                  el contenido que muestra debajo.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Prototipo low-fi -->
+        <div class="block">
+          <div class="block-head">
+            <span class="kicker">Prototipo de baja fidelidad</span>
+            <h3>Flujo principal de interacción</h3>
+            <p>
+              Recorrido completo desde que se abre la aplicación hasta que se
+              vuelve a ella con el progreso actualizado. Las etiquetas sobre las
+              flechas indican la acción del usuario que provoca cada transición.
+            </p>
+          </div>
+
+          <div class="flow">
+            <!-- 01 -->
+            <div class="flow-step">
+              <div class="wire">
+                <div class="wire-notch"></div>
+                <div class="wire-title"><b>1</b> Inicio</div>
+                <div class="w-box w-hero"></div>
+                <div class="w-line dark" style="width: 62%"></div>
+                <div class="w-cta" style="width: 74%"></div>
+                <div class="w-line" style="width: 46%"></div>
+                <div class="w-row">
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                </div>
+                <div class="w-line" style="width: 56%"></div>
+                <div class="w-row">
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                </div>
+                <div class="w-tabbar">
+                  <i class="on"></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="flow-caption">
+                <b>Descubrir</b>
+                <span
+                  >Hero destacado, «Continuar viendo» en primera posición y
+                  carruseles por categoría.</span
+                >
+                <span class="next-hint">→ Pulsa la lupa</span>
+              </div>
+            </div>
+
+            <div class="flow-arrow">
+              <div class="line"></div>
+              <span>Pulsa la lupa</span>
+            </div>
+
+            <!-- 02 -->
+            <div class="flow-step">
+              <div class="wire">
+                <div class="wire-notch"></div>
+                <div class="wire-title"><b>2</b> Buscar</div>
+                <div class="w-input"></div>
+                <div class="w-chips">
+                  <i class="on"></i><i></i><i></i><i></i>
+                </div>
+                <div class="w-line" style="width: 40%"></div>
+                <div class="w-row">
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                </div>
+                <div class="w-row">
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                </div>
+                <div class="w-row">
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                </div>
+                <div class="w-tabbar">
+                  <i></i><i class="on"></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="flow-caption">
+                <b>Filtrar</b>
+                <span
+                  >Campo de búsqueda, chips de tipo y género, y rejilla de
+                  resultados. Con el campo vacío muestra búsquedas
+                  recientes.</span
+                >
+                <span class="next-hint">→ Toca un resultado</span>
+              </div>
+            </div>
+
+            <div class="flow-arrow">
+              <div class="line"></div>
+              <span>Toca un resultado</span>
+            </div>
+
+            <!-- 03 -->
+            <div class="flow-step">
+              <div class="wire">
+                <div class="wire-notch"></div>
+                <div class="wire-title"><b>3</b> Ficha</div>
+                <div class="w-box w-hero"></div>
+                <div class="w-line dark" style="width: 76%"></div>
+                <div class="w-chips">
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="w-cta"></div>
+                <div class="w-ctrls">
+                  <b></b><b></b><b></b>
+                </div>
+                <div class="w-line" style="width: 100%"></div>
+                <div class="w-line" style="width: 88%"></div>
+                <div class="w-line" style="width: 64%"></div>
+                <div class="w-row" style="margin-top: 4px">
+                  <div class="w-poster" style="height: 34px"></div>
+                  <div class="w-poster" style="height: 34px"></div>
+                </div>
+              </div>
+              <div class="flow-caption">
+                <b>Decidir</b>
+                <span
+                  >Punto crítico del flujo. Un único CTA dominante, metadatos
+                  escaneables y acciones secundarias subordinadas.</span
+                >
+                <span class="next-hint">→ Pulsa Reproducir</span>
+              </div>
+            </div>
+
+            <div class="flow-arrow">
+              <div class="line"></div>
+              <span>Pulsa Reproducir</span>
+            </div>
+
+            <!-- 04 -->
+            <div class="flow-step">
+              <div class="wire">
+                <div class="wire-notch"></div>
+                <div class="wire-title"><b>4</b> Reproductor</div>
+                <div
+                  class="w-box"
+                  style="height: 128px; background: #4a4a58"
+                ></div>
+                <div class="w-progress"><i></i></div>
+                <div class="w-ctrls">
+                  <b></b><b class="main"></b><b></b>
+                </div>
+                <div class="w-row" style="margin-top: 6px">
+                  <div class="w-line"></div>
+                  <div class="w-line"></div>
+                </div>
+                <div class="w-line" style="width: 52%"></div>
+                <div class="w-cta" style="width: 62%; margin-top: auto"></div>
+              </div>
+              <div class="flow-caption">
+                <b>Reproducir</b>
+                <span
+                  >Controles que se autoocultan, subtítulos y audio accesibles, y
+                  paso al siguiente episodio sin salir.</span
+                >
+                <span class="next-hint">→ Cierra el reproductor</span>
+              </div>
+            </div>
+
+            <div class="flow-arrow">
+              <div class="line"></div>
+              <span>Cierra el reproductor</span>
+            </div>
+
+            <!-- 05 -->
+            <div class="flow-step">
+              <div class="wire">
+                <div class="wire-notch"></div>
+                <div class="wire-title"><b>5</b> Retomar</div>
+                <div class="w-box w-hero"></div>
+                <div class="w-line dark" style="width: 58%"></div>
+                <div class="w-row">
+                  <div>
+                    <div class="w-poster" style="margin-bottom: 4px"></div>
+                    <div class="w-progress"><i></i></div>
+                  </div>
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                </div>
+                <div class="w-cta" style="width: 68%"></div>
+                <div class="w-line" style="width: 44%"></div>
+                <div class="w-row">
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                  <div class="w-poster"></div>
+                </div>
+                <div class="w-tabbar">
+                  <i class="on"></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="flow-caption">
+                <b>Volver</b>
+                <span
+                  >El inicio ya refleja el progreso: el título vuelve a la
+                  primera posición con su barra actualizada.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="block" style="margin-top: 34px">
+            <div class="block-head">
+              <h3>Decisiones de diseño del prototipo</h3>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="width: 22%">Decisión</th>
+                  <th style="width: 39%">Por qué</th>
+                  <th style="width: 39%">Problema que ataca</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>El flujo es un ciclo, no una línea</td>
+                  <td>
+                    El usuario de streaming casi nunca empieza de cero: vuelve a
+                    algo que dejó a medias. El recorrido termina donde empieza,
+                    con el estado ya actualizado.
+                  </td>
+                  <td>H1 · Visibilidad del estado del sistema</td>
+                </tr>
+                <tr>
+                  <td>Un solo CTA dominante en la ficha</td>
+                  <td>
+                    Con varios botones del mismo peso, la decisión se retrasa. Un
+                    único botón primario y el resto subordinado acorta el tiempo
+                    hasta la reproducción.
+                  </td>
+                  <td>H8 · Diseño estético y minimalista</td>
+                </tr>
+                <tr>
+                  <td>Búsqueda con estado inicial útil</td>
+                  <td>
+                    Con el campo vacío se muestran consultas y filtros recientes
+                    en lugar de una pantalla en blanco, para no obligar a
+                    reconstruir la exploración.
+                  </td>
+                  <td>H6 · Reconocimiento antes que recuerdo</td>
+                </tr>
+                <tr>
+                  <td>Barra de pestañas siempre presente</td>
+                  <td>
+                    Salvo en el reproductor, que es de pantalla completa por
+                    naturaleza. El usuario nunca pierde la salida hacia el resto
+                    de la aplicación.
+                  </td>
+                  <td>H3 · Control y libertad del usuario</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PARTE 3 ===================== -->
+      <section class="part" id="parte-3">
+        <div class="part-head">
+          <span class="eyebrow">Parte 3</span>
+          <h2>Rediseño de alta fidelidad</h2>
+          <p class="intro">
+            Se rediseña la ficha de detalle de una serie. Es la pantalla donde
+            converge todo el flujo y donde el usuario resuelve tres preguntas
+            seguidas: qué es esto, por qué me puede interesar y qué hago ahora.
+            Si esa pantalla tarda en responderlas, se vuelve al catálogo.
+          </p>
+        </div>
+
+        <!-- Diagnóstico -->
+        <div class="block" style="margin-top: 0">
+          <div class="block-head">
+            <span class="kicker">Punto de partida</span>
+            <h3>Antes y después</h3>
+            <p>
+              A la izquierda, la reconstrucción de la ficha actual con los
+              problemas detectados en la Parte 1. A la derecha, la propuesta
+              construida con el sistema de componentes que se documenta más
+              abajo.
+            </p>
+          </div>
+
+          <div class="compare">
+            <!-- ANTES -->
+            <div class="compare-col">
+              <span class="compare-tag a">Antes · estado actual</span>
+              <div class="phone before">
+                <div class="statusbar">
+                  <span>9:41</span>
+                  <span class="right">5G ▮</span>
+                </div>
+                <div class="p-hero">
+                  <div class="art"></div>
+                  <div class="p-appbar">
+                    <span class="round-btn" style="width: 36px; height: 36px"
+                      >‹</span
+                    >
+                    <span class="round-btn" style="width: 36px; height: 36px"
+                      >⋯</span
+                    >
+                  </div>
+                  <div class="p-hero-foot">
+                    <span class="p-title">The Last of Us</span>
+                    <span class="meta-inline"
+                      >2023 · 2 temporadas · 16+ · Drama, Ciencia ficción · 4K
+                      UHD · Audiodescripción</span
+                    >
+                  </div>
+                </div>
+                <div class="p-body">
+                  <div class="cta-row">
+                    <button class="btn btn-primary">▶ Reproducir</button>
+                    <button class="btn btn-secondary">Ver tráiler</button>
+                  </div>
+                  <div class="mini-actions">
+                    <div><i>+</i>Mi lista</div>
+                    <div><i>↓</i>Descargar</div>
+                    <div><i>↗</i>Compartir</div>
+                    <div><i>★</i>Valorar</div>
+                  </div>
+                  <p class="p-synopsis" style="font-size: 13px">
+                    Veinte años después de que la civilización moderna fuera
+                    destruida, Joel, un superviviente curtido, recibe el encargo
+                    de sacar a Ellie… <b>más</b>
+                  </p>
+                  <div class="p-tabs">
+                    <span class="on">Episodios</span>
+                    <span>Sugerencias</span>
+                    <span>Extras</span>
+                    <span>Detalles</span>
+                  </div>
+                  <div class="p-eps">
+                    <div class="ep-card">
+                      <div class="ep-thumb"></div>
+                      <div>
+                        <h5>1. Cuando estés perdido en la oscuridad</h5>
+                        <p>81 min</p>
+                      </div>
+                    </div>
+                    <div class="ep-card">
+                      <div class="ep-thumb"></div>
+                      <div>
+                        <h5>2. Infectados</h5>
+                        <p>53 min</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="compare-notes">
+                <div class="note bad">
+                  <b>1</b>
+                  <span
+                    >Los metadatos son una frase corrida. Hay que leerla entera
+                    para extraer un solo dato.</span
+                  >
+                </div>
+                <div class="note bad">
+                  <b>2</b>
+                  <span
+                    >Dos botones compiten por el mismo espacio y peso. No hay una
+                    acción evidente.</span
+                  >
+                </div>
+                <div class="note bad">
+                  <b>3</b>
+                  <span
+                    >Cuatro acciones secundarias de 30&nbsp;px, por debajo del
+                    mínimo táctil de 44&nbsp;px.</span
+                  >
+                </div>
+                <div class="note bad">
+                  <b>4</b>
+                  <span
+                    >La serie ya estaba empezada, pero nada lo indica: el botón
+                    dice «Reproducir» sin más.</span
+                  >
+                </div>
+                <div class="note bad">
+                  <b>5</b>
+                  <span
+                    >La sinopsis se trunca y obliga a un toque extra para
+                    decidir.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- DESPUÉS -->
+            <div class="compare-col">
+              <span class="compare-tag b">Después · propuesta</span>
+              <div class="phone">
+                <div class="statusbar">
+                  <span>9:41</span>
+                  <span class="right">5G ▮</span>
+                </div>
+                <div class="p-hero">
+                  <div class="art"></div>
+                  <div class="p-appbar">
+                    <span class="round-btn">‹</span>
+                    <span class="round-btn">⋯</span>
+                  </div>
+                  <div class="p-hero-foot">
+                    <span class="brand-tag">HBO Original</span>
+                    <span class="p-title">The Last<br />of Us</span>
+                    <span class="resume-strip">
+                      <span>T1:E3</span>
+                      <span class="bar"><i></i></span>
+                      <span>Quedan 22 min</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="p-body">
+                  <div class="p-meta">
+                    <span class="pill hl">★ 8,7</span>
+                    <span class="pill">2023</span>
+                    <span class="pill">2 temporadas</span>
+                    <span class="pill age">16+</span>
+                    <span class="pill">4K&nbsp;UHD</span>
+                  </div>
+                  <button class="btn btn-primary" style="width: 100%">
+                    ▶ Reanudar T1:E3
+                  </button>
+                  <div class="p-actions">
+                    <span class="iaction is-active">
+                      <span class="hit">✓</span>
+                      <span>En mi lista</span>
+                    </span>
+                    <span class="iaction">
+                      <span class="hit">↓</span>
+                      <span>Descargar</span>
+                    </span>
+                    <span class="iaction">
+                      <span class="hit">▷</span>
+                      <span>Tráiler</span>
+                    </span>
+                    <span class="iaction">
+                      <span class="hit">↗</span>
+                      <span>Compartir</span>
+                    </span>
+                  </div>
+                  <p class="p-synopsis">
+                    Veinte años después de que la civilización moderna fuera
+                    destruida, Joel recibe el encargo de sacar a Ellie de una
+                    zona de cuarentena. Lo que empieza como un trabajo se
+                    convierte en una travesía brutal por un país devastado.
+                  </p>
+                  <div class="p-tabs">
+                    <span class="on">Episodios</span>
+                    <span>Relacionados</span>
+                    <span>Detalles</span>
+                  </div>
+                  <span class="season-select">Temporada 1 <span>▾</span></span>
+                  <div class="p-eps">
+                    <div class="ep-card">
+                      <div class="ep-thumb">
+                        <span class="bar"><i style="width: 100%"></i></span>
+                      </div>
+                      <div>
+                        <h5>1. Cuando estés perdido en la oscuridad</h5>
+                        <p>81 min · Visto</p>
+                      </div>
+                    </div>
+                    <div class="ep-card">
+                      <div class="ep-thumb">
+                        <span class="bar"><i style="width: 100%"></i></span>
+                      </div>
+                      <div>
+                        <h5>2. Infectados</h5>
+                        <p>53 min · Visto</p>
+                      </div>
+                    </div>
+                    <div class="ep-card">
+                      <div class="ep-thumb">
+                        <span class="bar"><i style="width: 58%"></i></span>
+                      </div>
+                      <div>
+                        <h5>3. Mucho, mucho tiempo</h5>
+                        <p>76 min · Quedan 22 min</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="compare-notes">
+                <div class="note good">
+                  <b>1</b>
+                  <span
+                    >Cada dato es una píldora independiente. Se escanean sin
+                    leerlos en orden.</span
+                  >
+                </div>
+                <div class="note good">
+                  <b>2</b>
+                  <span
+                    >Un único botón primario a todo el ancho, en blanco sobre
+                    fondo negro: 20,4:1 de contraste.</span
+                  >
+                </div>
+                <div class="note good">
+                  <b>3</b>
+                  <span
+                    >Acciones secundarias con área táctil de 44&nbsp;px y estado
+                    activo visible en «Mi lista».</span
+                  >
+                </div>
+                <div class="note good">
+                  <b>4</b>
+                  <span
+                    >El progreso sube al hero y el CTA nombra el episodio exacto:
+                    «Reanudar T1:E3».</span
+                  >
+                </div>
+                <div class="note good">
+                  <b>5</b>
+                  <span
+                    >Sinopsis completa y lista de episodios con progreso por
+                    episodio.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foundations -->
+        <div class="block">
+          <div class="block-head">
+            <span class="kicker">Foundations</span>
+            <h3>Tokens de color</h3>
+            <p>
+              Paleta oscura y de bajo brillo para que el arte del contenido sea
+              lo único saturado en pantalla. Los ratios están calculados sobre
+              <code>bg/app</code> y verificados contra el nivel AA de WCAG 2.1.
+            </p>
+          </div>
+
+          <div class="tokens">
+            <div class="swatch">
+              <div class="chip" style="background: #08080c"></div>
+              <div class="meta">
+                <div class="nm">bg/app</div>
+                <div class="hx">#08080C</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #101017"></div>
+              <div class="meta">
+                <div class="nm">bg/elevated</div>
+                <div class="hx">#101017</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #1d1d28"></div>
+              <div class="meta">
+                <div class="nm">bg/overlay</div>
+                <div class="hx">#1D1D28</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #24242f"></div>
+              <div class="meta">
+                <div class="nm">border/subtle</div>
+                <div class="hx">#24242F</div>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #34344a"></div>
+              <div class="meta">
+                <div class="nm">border/strong</div>
+                <div class="hx">#34344A</div>
+              </div>
+            </div>
+
+            <div class="swatch">
+              <div class="chip" style="background: #ffffff"></div>
+              <div class="meta">
+                <div class="nm">text/primary</div>
+                <div class="hx">#FFFFFF</div>
+                <span class="ratio">20,4:1 · AAA</span>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #b8b8c7"></div>
+              <div class="meta">
+                <div class="nm">text/secondary</div>
+                <div class="hx">#B8B8C7</div>
+                <span class="ratio">10,4:1 · AAA</span>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #7b7b8c"></div>
+              <div class="meta">
+                <div class="nm">text/muted</div>
+                <div class="hx">#7B7B8C</div>
+                <span class="ratio">4,9:1 · AA</span>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #8b5cf6"></div>
+              <div class="meta">
+                <div class="nm">accent/primary</div>
+                <div class="hx">#8B5CF6</div>
+                <span class="ratio warn">4,8:1 · solo AA</span>
+              </div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: #7c3aed"></div>
+              <div class="meta">
+                <div class="nm">accent/strong</div>
+                <div class="hx">#7C3AED</div>
+                <span class="ratio">5,7:1 sobre blanco</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top: 18px">
+            <strong>Por qué hay dos acentos.</strong> Con
+            <code>accent/primary</code> como fondo, el texto blanco encima solo
+            alcanza 4,2:1 y no llega al 4,5:1 que exige AA. Por eso ese token
+            queda reservado a indicadores y elementos no textuales —barras de
+            progreso, subrayado de pestaña activa— y se introduce
+            <code>accent/strong</code>, más oscuro, para cualquier superficie
+            rellena que tenga que llevar texto blanco encima.
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-head">
+            <h3>Escala tipográfica</h3>
+            <p>
+              Cinco estilos, sin tamaños intermedios improvisados. Ninguno baja
+              de 12&nbsp;px, que es el mínimo legible en móvil a distancia de
+              brazo.
+            </p>
+          </div>
+          <div class="type-scale">
+            <div class="type-row">
+              <div class="spec">
+                <b>Display</b>
+                38 / 35 · Bold · −3%
+              </div>
+              <div
+                class="sample"
+                style="
+                  font-size: 38px;
+                  line-height: 1;
+                  font-weight: 800;
+                  letter-spacing: -0.03em;
+                "
+              >
+                The Last of Us
+              </div>
+            </div>
+            <div class="type-row">
+              <div class="spec">
+                <b>Title</b>
+                24 / 31 · Bold · −2%
+              </div>
+              <div
+                class="sample"
+                style="font-size: 24px; line-height: 1.3; font-weight: 700"
+              >
+                Temporada 1 · 9 episodios
+              </div>
+            </div>
+            <div class="type-row">
+              <div class="spec">
+                <b>Subtitle</b>
+                16 / 21 · SemiBold
+              </div>
+              <div
+                class="sample"
+                style="font-size: 16px; line-height: 1.3; font-weight: 600"
+              >
+                3. Mucho, mucho tiempo
+              </div>
+            </div>
+            <div class="type-row">
+              <div class="spec">
+                <b>Body</b>
+                14 / 22 · Regular
+              </div>
+              <div
+                class="sample"
+                style="font-size: 14px; line-height: 1.55; color: var(--muted)"
+              >
+                Veinte años después de que la civilización moderna fuera
+                destruida…
+              </div>
+            </div>
+            <div class="type-row">
+              <div class="spec">
+                <b>Caption</b>
+                12 / 16 · Medium
+              </div>
+              <div
+                class="sample"
+                style="
+                  font-size: 12px;
+                  line-height: 1.35;
+                  font-weight: 500;
+                  color: var(--faint);
+                "
+              >
+                76 min · Quedan 22 min
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="grid g2" style="gap: 30px">
+            <div>
+              <div class="block-head">
+                <h3>Espaciado</h3>
+                <p>
+                  Escala de base 4. Todo el <em>auto layout</em> usa
+                  exclusivamente estos valores.
+                </p>
+              </div>
+              <div class="scale-strip">
+                <figure style="width: 26px">
+                  <div class="bar" style="height: 4px"></div>
+                  <figcaption>2xs<br />4</figcaption>
+                </figure>
+                <figure style="width: 30px">
+                  <div class="bar" style="height: 8px"></div>
+                  <figcaption>xs<br />8</figcaption>
+                </figure>
+                <figure style="width: 34px">
+                  <div class="bar" style="height: 12px"></div>
+                  <figcaption>s<br />12</figcaption>
+                </figure>
+                <figure style="width: 38px">
+                  <div class="bar" style="height: 16px"></div>
+                  <figcaption>m<br />16</figcaption>
+                </figure>
+                <figure style="width: 44px">
+                  <div class="bar" style="height: 24px"></div>
+                  <figcaption>l<br />24</figcaption>
+                </figure>
+                <figure style="width: 50px">
+                  <div class="bar" style="height: 32px"></div>
+                  <figcaption>xl<br />32</figcaption>
+                </figure>
+                <figure style="width: 58px">
+                  <div class="bar" style="height: 48px"></div>
+                  <figcaption>2xl<br />48</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div>
+              <div class="block-head">
+                <h3>Radios</h3>
+                <p>
+                  Cuanto mayor es la superficie, mayor el radio. Las acciones
+                  usan radio completo para distinguirse de los contenedores.
+                </p>
+              </div>
+              <div class="radii">
+                <figure>
+                  <div class="sq" style="border-radius: 6px"></div>
+                  <figcaption class="prop">radius/s · 6</figcaption>
+                </figure>
+                <figure>
+                  <div class="sq" style="border-radius: 10px"></div>
+                  <figcaption class="prop">radius/m · 10</figcaption>
+                </figure>
+                <figure>
+                  <div class="sq" style="border-radius: 16px"></div>
+                  <figcaption class="prop">radius/l · 16</figcaption>
+                </figure>
+                <figure>
+                  <div class="sq" style="border-radius: 999px"></div>
+                  <figcaption class="prop">radius/full</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Componentes -->
+        <div class="block">
+          <div class="block-head">
+            <span class="kicker">Librería</span>
+            <h3>Componentes y variantes</h3>
+            <p>
+              Cinco componentes cubren toda la pantalla. Cada uno se define con
+              sus propiedades y sus variantes, tal y como deben quedar creados en
+              Figma para poder intercambiarlos desde el panel de propiedades.
+            </p>
+          </div>
+
+          <div class="grid" style="gap: 16px">
+            <!-- Button -->
+            <div class="spec-card">
+              <header>
+                <h4>Button</h4>
+                <div class="props">
+                  <span class="prop">Variant: Primary | Secondary | Ghost</span>
+                  <span class="prop">State: Default | Pressed | Disabled</span>
+                  <span class="prop">Label: text</span>
+                  <span class="prop">Icon: boolean</span>
+                </div>
+              </header>
+              <div class="variants">
+                <div class="variant">
+                  <button class="btn btn-primary">▶ Reanudar T1:E3</button>
+                  <span class="lab">Primary / Default</span>
+                </div>
+                <div class="variant">
+                  <button class="btn btn-primary is-pressed">
+                    ▶ Reanudar T1:E3
+                  </button>
+                  <span class="lab">Primary / Pressed</span>
+                </div>
+                <div class="variant">
+                  <button class="btn btn-secondary">Ver tráiler</button>
+                  <span class="lab">Secondary / Default</span>
+                </div>
+                <div class="variant">
+                  <button class="btn btn-secondary is-disabled">
+                    No disponible
+                  </button>
+                  <span class="lab">Secondary / Disabled</span>
+                </div>
+                <div class="variant">
+                  <button class="btn btn-ghost">Más información</button>
+                  <span class="lab">Ghost / Default</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Metadata pill -->
+            <div class="spec-card">
+              <header>
+                <h4>Metadata Pill</h4>
+                <div class="props">
+                  <span class="prop">Tone: Neutral | Highlight | Rating</span>
+                  <span class="prop">Label: text</span>
+                  <span class="prop">Icon: boolean</span>
+                </div>
+              </header>
+              <div class="variants">
+                <div class="variant">
+                  <span class="pill">2023</span>
+                  <span class="lab">Neutral</span>
+                </div>
+                <div class="variant">
+                  <span class="pill">2 temporadas</span>
+                  <span class="lab">Neutral</span>
+                </div>
+                <div class="variant">
+                  <span class="pill hl">★ 8,7</span>
+                  <span class="lab">Highlight</span>
+                </div>
+                <div class="variant">
+                  <span class="pill age">16+</span>
+                  <span class="lab">Rating</span>
+                </div>
+                <div class="variant">
+                  <span class="pill">4K UHD</span>
+                  <span class="lab">Neutral</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Icon action -->
+            <div class="spec-card">
+              <header>
+                <h4>Icon Action</h4>
+                <div class="props">
+                  <span class="prop">State: Default | Active</span>
+                  <span class="prop">Icon: instance swap</span>
+                  <span class="prop">Label: text</span>
+                </div>
+              </header>
+              <div class="variants">
+                <div class="variant">
+                  <span class="iaction"
+                    ><span class="hit">+</span><span>Mi lista</span></span
+                  >
+                  <span class="lab">Default</span>
+                </div>
+                <div class="variant">
+                  <span class="iaction is-active"
+                    ><span class="hit">✓</span><span>En mi lista</span></span
+                  >
+                  <span class="lab">Active</span>
+                </div>
+                <div class="variant">
+                  <span class="iaction"
+                    ><span class="hit">↓</span><span>Descargar</span></span
+                  >
+                  <span class="lab">Default</span>
+                </div>
+                <div class="variant">
+                  <span class="iaction"
+                    ><span class="hit">▷</span><span>Tráiler</span></span
+                  >
+                  <span class="lab">Default</span>
+                </div>
+                <div class="variant">
+                  <span class="iaction"
+                    ><span class="hit">↗</span><span>Compartir</span></span
+                  >
+                  <span class="lab">Default</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content card -->
+            <div class="spec-card">
+              <header>
+                <h4>Content Card</h4>
+                <div class="props">
+                  <span class="prop">Type: Episode | Poster</span>
+                  <span class="prop">Progress: None | Partial | Complete</span>
+                  <span class="prop">Title / Meta: text</span>
+                </div>
+              </header>
+              <div class="variants">
+                <div class="variant">
+                  <div class="ep-card">
+                    <div class="ep-thumb">
+                      <span class="bar"><i style="width: 100%"></i></span>
+                    </div>
+                    <div>
+                      <h5>2. Infectados</h5>
+                      <p>53 min · Visto</p>
+                    </div>
+                  </div>
+                  <span class="lab">Episode / Complete</span>
+                </div>
+                <div class="variant">
+                  <div class="ep-card">
+                    <div class="ep-thumb">
+                      <span class="bar"><i style="width: 58%"></i></span>
+                    </div>
+                    <div>
+                      <h5>3. Mucho, mucho tiempo</h5>
+                      <p>76 min · Quedan 22 min</p>
+                    </div>
+                  </div>
+                  <span class="lab">Episode / Partial</span>
+                </div>
+                <div class="variant">
+                  <div class="poster-card">
+                    <div class="poster-art"></div>
+                    <b>Estación once</b>
+                    <span>Serie · 2021</span>
+                  </div>
+                  <span class="lab">Poster / None</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Handoff -->
+        <div class="block">
+          <div class="block-head">
+            <span class="kicker">Handoff</span>
+            <h3>Especificaciones de la pantalla</h3>
+            <p>
+              Frame de 390&nbsp;×&nbsp;844&nbsp;px (iPhone 14). Cada marcador
+              corresponde a una fila de la tabla de la derecha, con los tokens
+              exactos aplicados a esa zona.
+            </p>
+          </div>
+
+          <div class="handoff-layout">
+            <div class="phone phone-annotated spec">
+              <div class="statusbar">
+                <span>9:41</span>
+                <span class="right">5G ▮</span>
+              </div>
+              <div class="p-hero spec-region">
+                <span class="marker">1</span>
+                <div class="art"></div>
+                <div class="p-appbar">
+                  <span class="round-btn">‹</span>
+                  <span class="round-btn">⋯</span>
+                </div>
+                <div class="p-hero-foot">
+                  <span class="brand-tag">HBO Original</span>
+                  <span class="p-title">The Last<br />of Us</span>
+                  <span class="resume-strip">
+                    <span>T1:E3</span>
+                    <span class="bar"><i></i></span>
+                    <span>Quedan 22 min</span>
+                  </span>
+                </div>
+              </div>
+              <div class="p-body">
+                <div class="p-meta spec-region">
+                  <span class="marker">2</span>
+                  <span class="pill hl">★ 8,7</span>
+                  <span class="pill">2023</span>
+                  <span class="pill">2 temporadas</span>
+                  <span class="pill age">16+</span>
+                  <span class="pill">4K&nbsp;UHD</span>
+                </div>
+                <div class="spec-region">
+                  <span class="marker">3</span>
+                  <button class="btn btn-primary" style="width: 100%">
+                    ▶ Reanudar T1:E3
+                  </button>
+                </div>
+                <div class="p-actions spec-region">
+                  <span class="marker">4</span>
+                  <span class="iaction is-active"
+                    ><span class="hit">✓</span><span>En mi lista</span></span
+                  >
+                  <span class="iaction"
+                    ><span class="hit">↓</span><span>Descargar</span></span
+                  >
+                  <span class="iaction"
+                    ><span class="hit">▷</span><span>Tráiler</span></span
+                  >
+                  <span class="iaction"
+                    ><span class="hit">↗</span><span>Compartir</span></span
+                  >
+                </div>
+                <div class="spec-region">
+                  <span class="marker">5</span>
+                  <p class="p-synopsis">
+                    Veinte años después de que la civilización moderna fuera
+                    destruida, Joel recibe el encargo de sacar a Ellie de una
+                    zona de cuarentena. Lo que empieza como un trabajo se
+                    convierte en una travesía brutal por un país devastado.
+                  </p>
+                </div>
+                <div class="p-tabs spec-region">
+                  <span class="marker">6</span>
+                  <span class="on">Episodios</span>
+                  <span>Relacionados</span>
+                  <span>Detalles</span>
+                </div>
+                <div class="p-eps spec-region">
+                  <span class="marker">7</span>
+                  <div class="ep-card">
+                    <div class="ep-thumb">
+                      <span class="bar"><i style="width: 100%"></i></span>
+                    </div>
+                    <div>
+                      <h5>1. Cuando estés perdido en la oscuridad</h5>
+                      <p>81 min · Visto</p>
+                    </div>
+                  </div>
+                  <div class="ep-card">
+                    <div class="ep-thumb">
+                      <span class="bar"><i style="width: 58%"></i></span>
+                    </div>
+                    <div>
+                      <h5>3. Mucho, mucho tiempo</h5>
+                      <p>76 min · Quedan 22 min</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="redline-list">
+              <div class="redline">
+                <span class="num">1</span>
+                <div>
+                  <b>Hero</b>
+                  <p>
+                    Altura fija 340&nbsp;px. Imagen a sangre con degradado
+                    <code>bg/app</code> del 0&nbsp;% al 100&nbsp;% en el último
+                    26&nbsp;% de la altura, para sostener el texto. Padding
+                    lateral <code>space/m</code> (16). El bloque inferior es
+                    <em>auto layout</em> vertical con <code>space/s</code> (12).
+                  </p>
+                </div>
+              </div>
+              <div class="redline">
+                <span class="num">2</span>
+                <div>
+                  <b>Fila de metadatos</b>
+                  <p>
+                    <em>Auto layout</em> horizontal con ajuste de línea,
+                    separación <code>space/xs</code> (8). Cada píldora usa
+                    <code>radius/s</code> (6), padding 4&nbsp;×&nbsp;9 y estilo
+                    <code>Caption</code>. La valoración es la única con
+                    <code>Tone=Highlight</code> para que ancle la lectura.
+                  </p>
+                </div>
+              </div>
+              <div class="redline">
+                <span class="num">3</span>
+                <div>
+                  <b>CTA principal</b>
+                  <p>
+                    Ancho completo (<em>fill container</em>), altura mínima
+                    48&nbsp;px, <code>radius/full</code>. Fondo
+                    <code>#FFFFFF</code> sobre <code>bg/app</code>: 20,4:1. La
+                    etiqueta es dinámica —«Reproducir» o «Reanudar T1:E3»— según
+                    haya progreso previo.
+                  </p>
+                </div>
+              </div>
+              <div class="redline">
+                <span class="num">4</span>
+                <div>
+                  <b>Acciones secundarias</b>
+                  <p>
+                    <em>Auto layout</em> horizontal con distribución
+                    <code>space-between</code>. Área táctil de
+                    44&nbsp;×&nbsp;44&nbsp;px según el mínimo de las Human
+                    Interface Guidelines. Etiqueta en <code>Caption</code> y
+                    color <code>text/secondary</code>.
+                  </p>
+                </div>
+              </div>
+              <div class="redline">
+                <span class="num">5</span>
+                <div>
+                  <b>Sinopsis</b>
+                  <p>
+                    Estilo <code>Body</code> 14/22 en
+                    <code>text/secondary</code>. Máximo cuatro líneas sin
+                    truncar en el ancho de 358&nbsp;px; a partir de ahí se
+                    despliega. Separación superior <code>space/l</code> (24).
+                  </p>
+                </div>
+              </div>
+              <div class="redline">
+                <span class="num">6</span>
+                <div>
+                  <b>Pestañas</b>
+                  <p>
+                    Separación <code>space/l</code> (24) entre etiquetas. La
+                    activa lleva subrayado de 3&nbsp;px en
+                    <code>accent/primary</code> —uso no textual, por lo que basta
+                    con 3:1— y el resto en <code>text/muted</code>.
+                  </p>
+                </div>
+              </div>
+              <div class="redline">
+                <span class="num">7</span>
+                <div>
+                  <b>Lista de episodios</b>
+                  <p>
+                    Miniatura de 116&nbsp;×&nbsp;66&nbsp;px,
+                    <code>radius/s</code>, con barra de progreso de 3&nbsp;px
+                    anclada al borde inferior. Separación entre tarjetas
+                    <code>space/m</code> (16). Estados de progreso:
+                    <em>none</em>, <em>partial</em>, <em>complete</em>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accesibilidad y checklist -->
+        <div class="block">
+          <div class="grid g2" style="gap: 30px">
+            <div>
+              <div class="block-head">
+                <h3>Accesibilidad</h3>
+                <p>Comprobaciones realizadas sobre la propuesta.</p>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Criterio</th>
+                    <th>Resultado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Texto principal</td>
+                    <td>Blanco sobre <code>bg/app</code> — 20,4:1 · AAA</td>
+                  </tr>
+                  <tr>
+                    <td>Texto secundario</td>
+                    <td><code>#B8B8C7</code> — 10,4:1 · AAA</td>
+                  </tr>
+                  <tr>
+                    <td>Texto terciario</td>
+                    <td><code>#7B7B8C</code> — 4,9:1 · AA</td>
+                  </tr>
+                  <tr>
+                    <td>Áreas táctiles</td>
+                    <td>Mínimo 44 × 44 px en todas las acciones</td>
+                  </tr>
+                  <tr>
+                    <td>Tamaño de texto</td>
+                    <td>Mínimo 12 px; cuerpo a 14 px</td>
+                  </tr>
+                  <tr>
+                    <td>Uso del color</td>
+                    <td>
+                      El progreso se refuerza con texto («Quedan 22 min»), no
+                      solo con la barra
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <div class="block-head">
+                <h3>Checklist de handoff</h3>
+                <p>Lo que debe cumplir el archivo de Figma para estar listo.</p>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Requisito</th>
+                    <th style="width: 90px">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Variables de color, espaciado y radio</td>
+                    <td>Definidas</td>
+                  </tr>
+                  <tr>
+                    <td>Estilos de texto publicados</td>
+                    <td>5 estilos</td>
+                  </tr>
+                  <tr>
+                    <td>Componentes con variantes nombradas</td>
+                    <td>4 sets</td>
+                  </tr>
+                  <tr>
+                    <td>Auto layout en todos los contenedores</td>
+                    <td>Sí</td>
+                  </tr>
+                  <tr>
+                    <td>Propiedades de texto e instancia expuestas</td>
+                    <td>Sí</td>
+                  </tr>
+                  <tr>
+                    <td>Sin texto truncado en 390 px</td>
+                    <td>Verificado</td>
+                  </tr>
+                  <tr>
+                    <td>Capas y frames con nombres semánticos</td>
+                    <td>Sí</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="callout" style="border-left-color: var(--ok)">
+            <strong>Resultado.</strong> La pantalla pasa de cinco elementos
+            compitiendo por la atención a una jerarquía de tres niveles —qué es,
+            por dónde ibas, qué haces ahora— y responde a las tres preguntas del
+            usuario sin necesidad de desplazarse ni de tocar nada. El botón
+            principal ya no dice «Reproducir» sino exactamente qué se va a
+            reproducir, que era el dato que faltaba para decidir.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot wrap">
+      <span>Módulo 0 · Laboratorio de UX · Máster en Desarrollo Frontend</span>
+      <span>HBO Max móvil · Flujo de descubrimiento y reproducción</span>
+    </footer>
+  </body>
+</html>
