@@ -9,6 +9,33 @@ Los textos de las Partes 1 y 2 están al final, listos para copiar y pegar.
 
 ---
 
+## Estado actual del archivo
+
+Buena parte ya está construida directamente en Figma. Esto es lo que hay y lo
+que falta:
+
+| Bloque | Estado |
+| ------ | ------ |
+| Página `01 - Evaluacion heuristica` | ✅ Contenido de la Parte 1 |
+| Variables `color` (12), `spacing` (7), `radius` (4) | ✅ Creadas, con *scopes* y *code syntax* |
+| Estilos de texto (5) | ✅ Creados y alineados al dossier |
+| Componente `Button` | ✅ 9 variantes · props `Label`, `Icon` |
+| Componente `Metadata Pill` | ✅ 3 tonos · prop `Label` |
+| Componente `Icon` | ✅ 5 glifos, para INSTANCE_SWAP |
+| Componente `Icon Action` | ✅ 2 estados · área táctil 44 px · prop de icono INSTANCE_SWAP |
+| Componente `Content Card` | ✅ 6 variantes (Type × Progress) · props `Title`, `Meta` |
+| Sección `Foundations` (página 03) | ✅ 12 muestras de color con ratios, escala tipográfica, espaciado y radios |
+| **Pantallas high-fi** (página 03) | ❌ **Pendiente** — apartado 4 de esta guía |
+| **Página `02 - Gestalt + Low-fi`** | ❌ **Pendiente** — solo tiene la cabecera |
+| Permisos de compartición | ❌ **Pendiente** |
+
+> **Nota sobre el plan de Figma.** La construcción automatizada se detuvo al
+> alcanzar el límite de llamadas del plan Starter. Lo que falta se puede montar
+> a mano siguiendo esta guía, o automatizar de nuevo cuando el límite se
+> reponga.
+
+---
+
 ## 0. Estructura del archivo
 
 Tres páginas, una por parte. El enunciado exige que las tres se distingan con
