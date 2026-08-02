@@ -63,9 +63,13 @@ modulo_0/
 
 | Página | Contenido |
 | ------ | --------- |
-| `01 - Evaluacion heuristica` | Alcance, método y las 10 heurísticas con severidad |
-| `02 - Gestalt + Low-fi` | 8 principios con demo visual y el flujo low-fi de 5 pantallas |
-| `03 - High-fi + Components` | Foundations, 5 sets de componentes, antes/después y handoff anotado |
+| `01 · Evaluación heurística` | Alcance, método, las 10 heurísticas con severidad y la síntesis |
+| `02 · Gestalt + Low-fi` | 8 principios con demo visual y el flujo low-fi de 5 pantallas |
+| `03 · High-fi + Componentes` | Foundations, 5 sets de componentes, antes/después y handoff anotado |
+
+Las capturas que sostienen la evaluación están en
+[`assets/img/`](./assets/img/), tomadas de la aplicación en un mismo perfil y
+una misma sesión.
 
 [`GUIA-FIGMA.md`](./GUIA-FIGMA.md) documenta la especificación de cada
 componente con sus variantes y propiedades, el desglose de la pantalla bloque a

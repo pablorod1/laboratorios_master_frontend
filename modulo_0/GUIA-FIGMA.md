@@ -16,9 +16,9 @@ lo que contiene y de las decisiones tomadas.
 
 | Bloque | Estado |
 | ------ | ------ |
-| Página `01 - Evaluacion heuristica` | ✅ Parte 1 |
-| Página `02 - Gestalt + Low-fi` | ✅ 8 principios con demo visual + flujo low-fi de 5 pantallas con transiciones etiquetadas |
-| Página `03 - High-fi + Components` | ✅ Foundations, componentes, antes/después y handoff anotado |
+| Página `01 · Evaluación heurística` | ✅ Alcance, método, las 10 heurísticas con severidad y la síntesis |
+| Página `02 · Gestalt + Low-fi` | ✅ 8 principios con demo visual + flujo low-fi de 5 pantallas con transiciones etiquetadas |
+| Página `03 · High-fi + Componentes` | ✅ Foundations, componentes, antes/después y handoff anotado |
 | Variables `color` (12), `spacing` (7), `radius` (4) | ✅ Con *scopes* y *code syntax* |
 | Estilos de texto (5) | ✅ Alineados al dossier |
 | `Button` | ✅ 9 variantes · props `Label`, `Icon` |
