@@ -102,6 +102,92 @@
 
         <div class="block">
           <div class="block-head">
+            <span class="kicker">Evidencia</span>
+            <h3>Capturas del recorrido</h3>
+            <p>
+              Todas las afirmaciones de esta evaluación se apoyan en estas ocho
+              capturas, tomadas de la aplicación en un mismo perfil y en una
+              misma sesión. Cuando algo no se ha podido verificar, se dice.
+            </p>
+          </div>
+          <div class="evidence">
+            <figure class="shot">
+              <img src="assets/img/02-inicio.jpg" alt="Pantalla de inicio de HBO Max con un título destacado a pantalla completa" />
+              <figcaption>
+                <b>Inicio</b>
+                El primer viewport lo ocupa entero un título promocionado, con
+                carrusel de seis posiciones. El catálogo empieza por debajo.
+                <span class="ref">H1 · H5 · H8</span>
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/05-inicio-carruseles.jpg" alt="Carruseles Top 10, Series populares y Recomendado para ti" />
+              <figcaption>
+                <b>Carruseles</b>
+                Filas separadas por más aire del que hay entre pósteres, misma
+                proporción en todas las portadas y último póster cortado.
+                <span class="ref">Gestalt</span>
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/01-ficha-detalle.jpg" alt="Ficha de detalle de la serie FROM" />
+              <figcaption>
+                <b>Ficha de detalle</b>
+                Un único CTA blanco, tres acciones secundarias y sinopsis
+                completa. Como metadatos, solo <code>16</code> y «4 Temporadas».
+                <span class="ref">H8</span>
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/06-ficha-episodios.jpg" alt="Lista de episodios de La Casa del Dragón con barras de progreso" />
+              <figcaption>
+                <b>Episodios</b>
+                Selector de temporada y barra de progreso bajo cada miniatura.
+                Cada episodio tiene su propio menú rápido.
+                <span class="ref">H1 · Gestalt</span>
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/08-menu-rapido.jpg" alt="Menú rápido de un póster con las opciones Añádelo a Mi lista, Comparte y Más información" />
+              <figcaption>
+                <b>Menú rápido</b>
+                Permite guardar, compartir y ver la sinopsis sin salir del
+                carrusel. No ofrece reproducir ni descargar.
+                <span class="ref">H7</span>
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/03-busqueda-vacia.jpg" alt="Búsqueda con el campo vacío mostrando una rejilla Popular" />
+              <figcaption>
+                <b>Búsqueda vacía</b>
+                No deja la pantalla en blanco: propone una rejilla «Popular».
+                Pero no conserva búsquedas ni filtros recientes.
+                <span class="ref">H6</span>
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/04-reproductor.jpg" alt="Reproductor con controles de retroceso y avance de 10 segundos y tiempo restante" />
+              <figcaption>
+                <b>Reproductor</b>
+                Salida siempre visible, ±10 s explícitos y tiempo restante
+                exacto. El vídeo sale en negro por el DRM.
+                <span class="ref">H1 · H3</span>
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/07-error-sin-conexion.jpg" alt="Mensaje de error: No hay conexión a internet, con botón Vuelve a intentarlo" />
+              <figcaption>
+                <b>Error de conexión</b>
+                Nombra la causa, dice qué comprobar y ofrece reintento. Sin
+                códigos ni jerga técnica.
+                <span class="ref">H9</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-head">
             <span class="kicker">Método</span>
             <h3>Cómo se ha evaluado</h3>
             <p>
@@ -131,18 +217,18 @@
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                La fila «Continuar viendo» dibuja una barra de progreso sobre
-                cada miniatura, así que el usuario sabe por dónde iba sin
-                abrir la ficha. En el reproductor, la carga se comunica con un
-                indicador sobre el fotograma y el desplazamiento por la línea de
-                tiempo muestra en todo momento el tiempo restante.
+                Cada miniatura de la lista de episodios lleva una barra de
+                progreso bajo la imagen, y el reproductor muestra el tiempo
+                restante exacto —<code>−01:03:43</code>— junto a la barra. En
+                una serie ya empezada, el botón principal de la ficha nombra el
+                episodio por el que se dejó en lugar del primero.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                El estado que no se comunica es el de sincronización entre
-                dispositivos: si dejas un episodio a medias en el televisor, el
-                móvil tarda en reflejarlo y no explica por qué. Marcar la fila
-                como «sincronizando» evitaría la sensación de progreso perdido.
+                El estado existe, pero no aflora donde arranca la sesión: el
+                inicio no ofrece ninguna fila de «Continuar viendo». Para
+                retomar algo hay que recordar el título, buscarlo y entrar en su
+                ficha, cuando el sistema ya sabe por dónde ibas.
               </p>
             </article>
 
@@ -156,18 +242,16 @@
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
                 El vocabulario es el del mundo audiovisual y no el del sistema:
-                temporada, episodio, tráiler, T1:E1. Los pósteres reproducen el
-                arte oficial que el usuario ya ha visto en marquesinas o redes
-                sociales, de modo que reconoce el título antes incluso de leer
-                su nombre.
+                «Temporada 3», «T3, E6: Hombres sin rostro», «1 h 6 min». La
+                clasificación por edad usa los iconos oficiales españoles, no
+                una escala inventada por el producto.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                La ambigüedad aparece en los formatos híbridos: un especial, un
-                documental o un evento en directo se presentan con la misma
-                tarjeta que una película. El usuario no sabe si va a ver veinte
-                minutos o dos horas hasta que entra. Una etiqueta de formato en
-                la propia tarjeta lo resolvería.
+                Los pictogramas de contenido que acompañan al <code>16</code>
+                —violencia, drogas— no llevan etiqueta ni son pulsables, así que
+                su significado depende de que el usuario ya los conozca de otro
+                contexto.
               </p>
             </article>
 
@@ -176,22 +260,20 @@
               <div class="heuristic-top">
                 <span class="heuristic-num">03</span>
                 <h4>Control y libertad del usuario</h4>
-                <span class="sev sev-2"><i></i>Sev. 2</span>
+                <span class="sev sev-1"><i></i>Sev. 1</span>
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                Todas las pantallas mantienen una salida visible: flecha atrás
-                en la ficha, aspa en el reproductor. Además el reproductor
-                permite retroceder diez segundos, saltar la cabecera y cambiar
-                de episodio sin volver a la ficha, así que el usuario nunca
-                queda atrapado.
+                El reproductor mantiene la flecha de salida siempre visible y
+                ofrece retroceso y avance de diez segundos con iconos que
+                indican el salto exacto. La ficha conserva la flecha atrás sobre
+                el hero, y el menú rápido se cierra deslizando.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                Falta el deshacer donde más duele. Eliminar un título de
-                «Continuar viendo» es inmediato y silencioso, y «Saltar intro»
-                no ofrece camino de vuelta si se pulsa por error. Un aviso
-                temporal con acción «Deshacer» cubriría ambos casos.
+                El menú rápido no ofrece deshacer tras «Añádelo a Mi lista»:
+                hay que volver a abrirlo sobre el mismo póster para revertir la
+                acción. Un aviso temporal con «Deshacer» cerraría el ciclo.
               </p>
             </article>
 
@@ -204,18 +286,18 @@
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                Respeta los patrones que el usuario ya conoce de otras
-                plataformas: barra de pestañas inferior persistente, carruseles
-                horizontales con título de fila, gesto de deslizar para navegar
-                y controles de reproducción en las posiciones esperadas.
+                El menú <code>⋮</code> aparece en la misma esquina de todos los
+                pósteres, tanto en la rejilla de búsqueda como en los carruseles
+                y en cada episodio. La barra inferior es persistente y los
+                controles del reproductor están donde se espera.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                La inconsistencia está en las acciones secundarias: «Mi lista»
-                se representa unas veces con un signo «+» y otras con un icono
-                de marcador, y descargar aparece en la ficha, en el episodio y
-                en el menú contextual con jerarquías distintas. Un icono y una
-                posición únicos por acción.
+                La navegación superior del inicio —Inicio, Series, Películas,
+                HBO, Deportes— se desplaza horizontalmente, pero «Deportes»
+                queda cortado por el borde sin ninguna señal de que la fila
+                continúe. Es el único punto donde se rompe el patrón de recorte
+                que sí funciona en los carruseles.
               </p>
             </article>
 
@@ -228,18 +310,18 @@
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                Los perfiles infantiles y el PIN de control parental impiden por
-                diseño el acceso a contenido no apto, en lugar de limitarse a
-                advertir después. La clasificación por edad se muestra antes de
-                iniciar la reproducción.
+                La clasificación por edad se muestra siempre antes de
+                reproducir: en el hero del inicio, en la ficha y en cada
+                episodio de la lista. El usuario nunca inicia un contenido sin
+                haber visto su calificación.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                No previene los errores caros en movilidad: reproducir en
-                calidad alta con datos móviles o descargar una temporada entera
-                sin avisar del espacio que ocupará. Un aviso previo, con la
-                opción de continuar, evitaría consumo de datos o de
-                almacenamiento no deseado.
+                El hero del inicio es un carrusel de seis posiciones y su botón
+                «Ver T1 E1» ocupa siempre el mismo sitio. Si la rotación avanza
+                mientras el usuario alcanza el botón, empieza un título que no
+                había elegido. Un objetivo que se mueve bajo el dedo es un
+                error de diseño, no del usuario.
               </p>
             </article>
 
@@ -252,18 +334,17 @@
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                Toda la navegación se apoya en reconocer y no en recordar:
-                pósteres, logotipos de título, filas etiquetadas por género y la
-                propia fila de «Continuar viendo» evitan que el usuario tenga
-                que teclear nada para llegar a lo que le interesa.
+                La búsqueda no castiga con una pantalla en blanco: con el campo
+                vacío propone una rejilla «Popular» de portadas, de modo que se
+                puede elegir reconociendo en lugar de teclear. Los carruseles
+                etiquetados hacen lo mismo en el inicio.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                La búsqueda sí exige recuerdo. Al volver a ella el campo aparece
-                vacío y se pierden tanto la consulta anterior como los filtros
-                aplicados, así que una exploración larga hay que reconstruirla
-                desde cero. Conservar consultas y filtros recientes descargaría
-                la memoria del usuario.
+                Esa rejilla es genérica, no personal. No hay búsquedas ni
+                filtros recientes, así que una exploración previa no se puede
+                retomar: hay que reconstruirla de memoria. Guardar las últimas
+                consultas descargaría al usuario de recordarlas.
               </p>
             </article>
 
@@ -272,22 +353,22 @@
               <div class="heuristic-top">
                 <span class="heuristic-num">07</span>
                 <h4>Flexibilidad y eficiencia de uso</h4>
-                <span class="sev sev-3"><i></i>Sev. 3</span>
+                <span class="sev sev-2"><i></i>Sev. 2</span>
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                Existen atajos reales para el usuario veterano: «Continuar
-                viendo» ocupa la primera posición del inicio, las descargas
-                permiten consumo sin red y la reproducción automática encadena
-                el siguiente episodio sin intervención.
+                Cada póster ofrece un menú <code>⋮</code> que permite «Añádelo a
+                Mi lista», «Comparte» y «Más información» sin salir del
+                carrusel, y muestra además la sinopsis del título. El atajo
+                existe y es consistente en todas las superficies.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                Es la heurística con más recorrido. Cualquier acción frecuente
-                —añadir a la lista, descargar, ver el tráiler— obliga a entrar
-                en la ficha, volver atrás y perder la posición del carrusel. Una
-                pulsación larga sobre la tarjeta que despliegue esas acciones
-                ahorraría dos pantallas en el caso de uso más habitual.
+                Ese menú no incluye reproducir: guardar es rápido, pero empezar
+                a ver sigue exigiendo entrar en la ficha. Y descargar no aparece
+                en el menú, ni en la ficha, ni en la barra inferior: no existe
+                en ningún punto del flujo, lo que deja sin cubrir el consumo sin
+                conexión.
               </p>
             </article>
 
@@ -300,18 +381,18 @@
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                El tema oscuro reduce el brillo del contenedor y convierte el
-                arte de las portadas en el único foco luminoso de la pantalla.
-                En el reproductor los controles se ocultan solos tras unos
-                segundos y dejan la imagen limpia.
+                La ficha es sobria y está bien jerarquizada: un único CTA blanco
+                a ancho completo, solo tres acciones secundarias claramente
+                subordinadas y la sinopsis completa sin truncar. Nada compite
+                con el botón principal.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                La ficha de detalle acumula ruido: cuatro acciones secundarias
-                del mismo tamaño y color compiten con el botón de reproducir, y
-                los metadatos se leen como una frase corrida en vez de como
-                datos escaneables. Bajar el peso visual de lo secundario
-                devuelve la atención al CTA.
+                Aquí el minimalismo se pasa de frenada. La ficha de
+                <em>FROM</em> aporta como únicos metadatos <code>16</code> y
+                «4 Temporadas»: sin año, género, duración ni calidad, faltan
+                datos para decidir. El problema no es que sobre información, es
+                que falta la necesaria.
               </p>
             </article>
 
@@ -320,22 +401,21 @@
               <div class="heuristic-top">
                 <span class="heuristic-num">09</span>
                 <h4>Reconocer, diagnosticar y recuperarse de errores</h4>
-                <span class="sev sev-3"><i></i>Sev. 3</span>
+                <span class="sev sev-1"><i></i>Sev. 1</span>
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                Los fallos de reproducción muestran un mensaje con opción de
-                reintentar en lugar de dejar la pantalla en negro, y la app
-                conserva la posición del contenido para no obligar a empezar de
-                cero tras el fallo.
+                Al perder la conexión, el mensaje nombra la causa —«No hay
+                conexión a internet»—, indica qué comprobar y ofrece un botón
+                «Vuelve a intentarlo». Sin códigos de error ni jerga técnica: es
+                el manual de cómo se escribe un error.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                El mensaje es genérico y suele acompañarse de un código que no
-                significa nada para el usuario. Sin conexión, límite de
-                dispositivos, título retirado del catálogo o no disponible en la
-                región exigen acciones distintas: el error debería nombrar la
-                causa y ofrecer directamente la acción que la resuelve.
+                Lo único objetable es que ocupa la pantalla completa y descarta
+                el contexto anterior, así que al recuperar la conexión hay que
+                rehacer la navegación. Un aviso no bloqueante conservaría dónde
+                estaba el usuario.
               </p>
             </article>
 
@@ -348,17 +428,17 @@
               </div>
               <p class="finding evidence">
                 <span class="lbl">Evidencia</span>
-                Existe un centro de ayuda accesible desde los ajustes de la
-                cuenta, con cobertura suficiente para incidencias de
-                suscripción, facturación o dispositivos vinculados.
+                El flujo principal es lo bastante convencional como para no
+                necesitar documentación: emisión, notificaciones y perfil usan
+                iconos reconocibles, y «Más información» dentro del menú rápido
+                da contexto del título sin sacar al usuario de la pantalla.
               </p>
               <p class="finding fix">
                 <span class="lbl">Mejora propuesta</span>
-                La ayuda vive lejos de donde surge la duda. Cuánto ocupa una
-                descarga, cuánto tiempo sigue disponible una vez descargada o
-                cómo fijar el idioma por defecto se resuelven en un artículo
-                externo, cuando bastaría un icono de información junto al propio
-                control.
+                Falta ayuda contextual justo donde surge la duda: los
+                pictogramas de contenido junto a la edad no se explican en
+                ningún punto, y la ausencia de descargas tampoco, de modo que el
+                usuario no sabe si el catálogo no las permite o si es su plan.
               </p>
             </article>
           </div>
@@ -370,11 +450,12 @@
             <span class="kicker">Síntesis</span>
             <h3>Dónde duele más</h3>
             <p>
-              Ninguna heurística se incumple de forma grave: HBO Max es un
-              producto maduro y la mayoría de hallazgos son cosméticos o
-              menores. Los dos de severidad 3 encabezan la priorización, junto
-              con un tercero que, aun siendo menor, condiciona por completo la
-              pantalla que se rediseña.
+              El recorrido con capturas en la mano deja un resultado más
+              favorable de lo esperado: <strong>ninguna heurística llega a
+              severidad 3</strong>. HBO Max resuelve bien lo que suele fallar en
+              este tipo de producto —los errores, la jerarquía de la ficha y los
+              atajos por tarjeta—, y los problemas que quedan son de omisión más
+              que de exceso.
             </p>
           </div>
 
@@ -407,10 +488,10 @@
                   <span class="track"
                     ><span
                       class="fill"
-                      style="width: 50%; background: var(--sev-2)"
+                      style="width: 25%; background: var(--sev-1)"
                     ></span
                   ></span>
-                  <span class="val">2</span>
+                  <span class="val">1</span>
                 </div>
                 <div class="sev-row">
                   <span class="name">04 · Consistencia</span>
@@ -447,10 +528,10 @@
                   <span class="track"
                     ><span
                       class="fill"
-                      style="width: 75%; background: var(--sev-3)"
+                      style="width: 50%; background: var(--sev-2)"
                     ></span
                   ></span>
-                  <span class="val">3</span>
+                  <span class="val">2</span>
                 </div>
                 <div class="sev-row">
                   <span class="name">08 · Estético y minimalista</span>
@@ -467,10 +548,10 @@
                   <span class="track"
                     ><span
                       class="fill"
-                      style="width: 75%; background: var(--sev-3)"
+                      style="width: 25%; background: var(--sev-1)"
                     ></span
                   ></span>
-                  <span class="val">3</span>
+                  <span class="val">1</span>
                 </div>
                 <div class="sev-row">
                   <span class="name">10 · Ayuda y documentación</span>
@@ -488,28 +569,29 @@
             <div style="display: flex; flex-direction: column; gap: 14px">
               <article class="card">
                 <h4>
-                  <span class="sev sev-3" style="margin-right: 8px"
+                  <span class="sev sev-2" style="margin-right: 8px"
                     ><i></i>P1</span
                   >
-                  Las acciones frecuentes cuestan demasiado
+                  La ficha no da datos para decidir
                 </h4>
                 <p style="margin-top: 10px">
-                  Guardar, descargar o previsualizar exige entrar en la ficha y
-                  volver. Es el problema con más impacto porque afecta al gesto
-                  que más se repite en toda la aplicación.
+                  Edad y número de temporadas es todo lo que ofrece. Sin año,
+                  género, duración ni calidad, el usuario tiene que salir a
+                  buscar fuera lo que debería estar en la pantalla que existe
+                  precisamente para eso.
                 </p>
               </article>
               <article class="card">
                 <h4>
-                  <span class="sev sev-3" style="margin-right: 8px"
+                  <span class="sev sev-2" style="margin-right: 8px"
                     ><i></i>P2</span
                   >
-                  Los errores no dicen qué hacer
+                  Descargar no existe en ningún sitio
                 </h4>
                 <p style="margin-top: 10px">
-                  Un mensaje genérico con un código deja al usuario sin siguiente
-                  paso justo en el momento de máxima frustración: cuando ya había
-                  decidido ver algo.
+                  Ni en la ficha, ni en el menú rápido, ni en la barra inferior.
+                  El consumo sin conexión —metro, avión, datos limitados— queda
+                  sin cubrir y sin explicación de por qué.
                 </p>
               </article>
               <article class="card">
@@ -517,18 +599,20 @@
                   <span class="sev sev-2" style="margin-right: 8px"
                     ><i></i>P3</span
                   >
-                  La ficha compite consigo misma
+                  El inicio no sirve para retomar
                 </h4>
                 <p style="margin-top: 10px">
-                  Demasiados elementos con el mismo peso visual retrasan la única
-                  decisión que importa en esa pantalla: darle a reproducir.
+                  No hay fila de «Continuar viendo» y el primer viewport lo
+                  ocupa entero un título promocionado. El caso de uso más
+                  frecuente —seguir con lo empezado— es el peor atendido.
                 </p>
               </article>
               <div class="callout" style="border-left-color: var(--ok)">
                 <strong>Foco del rediseño.</strong> La Parte 3 ataca
-                <strong>P3</strong> y parte de <strong>P1</strong>, porque ambos
-                se resuelven dentro de la ficha de detalle, que es además la
-                pantalla que concentra la decisión de todo el flujo.
+                <strong>P1</strong> y <strong>P2</strong>, porque ambos se
+                resuelven dentro de la ficha de detalle. <strong>P3</strong>
+                vive en la pantalla de inicio y queda documentado, pero fuera
+                del alcance del rediseño.
               </div>
             </div>
           </div>
@@ -731,6 +815,83 @@
           </div>
         </div>
 
+        <div class="block">
+          <div class="block-head">
+            <span class="kicker">Verificación</span>
+            <h3>Los principios, sobre la captura real</h3>
+            <p>
+              Cinco de los ocho principios operan simultáneamente en una sola
+              pantalla de la aplicación. No es casualidad: es lo que permite
+              recorrer decenas de portadas sin esfuerzo consciente.
+            </p>
+          </div>
+          <div class="grid g2" style="gap: 30px; align-items: start">
+            <figure class="shot">
+              <img
+                src="assets/img/05-inicio-carruseles.jpg"
+                alt="Carruseles del inicio de HBO Max con las filas Top 10, Series populares y Recomendado para ti"
+              />
+              <figcaption>
+                <b>Inicio · carruseles</b>
+                La misma pantalla sostiene cinco principios a la vez.
+              </figcaption>
+            </figure>
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <div class="note good">
+                <b>1</b>
+                <span
+                  ><strong>Proximidad.</strong> El aire vertical entre «Series
+                  populares» y «Recomendado para ti» es visiblemente mayor que
+                  el hueco entre pósteres de una misma fila. Las categorías se
+                  separan sin una sola línea divisoria.</span
+                >
+              </div>
+              <div class="note good">
+                <b>2</b>
+                <span
+                  ><strong>Similitud.</strong> Todas las portadas comparten
+                  proporción y radio, así que se comparan de un vistazo. Los
+                  numerales gigantes del Top 10 rompen ese patrón a propósito, y
+                  por eso se leen como un ranking y no como una fila más.</span
+                >
+              </div>
+              <div class="note good">
+                <b>3</b>
+                <span
+                  ><strong>Cierre.</strong> El cuarto póster de cada fila
+                  aparece cortado por el borde. Ese recorte es toda la
+                  instrucción que hace falta para entender que la fila
+                  continúa.</span
+                >
+              </div>
+              <div class="note good">
+                <b>4</b>
+                <span
+                  ><strong>Continuidad.</strong> Los pósteres comparten línea
+                  base estricta, lo que crea un raíl horizontal. El
+                  desplazamiento dentro de la fila y el de la página nunca se
+                  confunden.</span
+                >
+              </div>
+              <div class="note good">
+                <b>5</b>
+                <span
+                  ><strong>Figura y fondo.</strong> El fondo casi negro no
+                  compite con nada, así que el arte de las portadas es lo único
+                  saturado y se lee como figura.</span
+                >
+              </div>
+              <div class="callout" style="margin-top: 4px">
+                <strong>Los tres restantes.</strong> Región común y conexión
+                uniforme se ven en la ficha y en la lista de episodios —la barra
+                de progreso pegada al borde inferior de cada miniatura—.
+                <em>Destino común</em> es el único que no se puede capturar:
+                depende del movimiento solidario de los pósteres al deslizar.
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Prototipo low-fi -->
         <div class="block">
           <div class="block-head">
@@ -771,8 +932,9 @@
               <div class="flow-caption">
                 <b>Descubrir</b>
                 <span
-                  >Hero destacado, «Continuar viendo» en primera posición y
-                  carruseles por categoría.</span
+                  >Hero destacado y, <em>como propuesta</em>, una fila
+                  «Continuar viendo» en primera posición —hoy inexistente—
+                  sobre los carruseles por categoría.</span
                 >
                 <span class="next-hint">→ Pulsa la lupa</span>
               </div>
@@ -816,8 +978,8 @@
                 <b>Filtrar</b>
                 <span
                   >Campo de búsqueda, chips de tipo y género, y rejilla de
-                  resultados. Con el campo vacío muestra búsquedas
-                  recientes.</span
+                  resultados. Con el campo vacío, búsquedas recientes en lugar
+                  de la rejilla genérica de hoy.</span
                 >
                 <span class="next-hint">→ Toca un resultado</span>
               </div>
@@ -853,8 +1015,9 @@
               <div class="flow-caption">
                 <b>Decidir</b>
                 <span
-                  >Punto crítico del flujo. Un único CTA dominante, metadatos
-                  escaneables y acciones secundarias subordinadas.</span
+                  >Punto crítico del flujo. Metadatos escaneables y descarga
+                  disponible, bajo el CTA dominante que la app ya
+                  acierta.</span
                 >
                 <span class="next-hint">→ Pulsa Reproducir</span>
               </div>
@@ -959,20 +1122,20 @@
                   <td>H1 · Visibilidad del estado del sistema</td>
                 </tr>
                 <tr>
-                  <td>Un solo CTA dominante en la ficha</td>
+                  <td>Metadatos suficientes en la ficha</td>
                   <td>
-                    Con varios botones del mismo peso, la decisión se retrasa. Un
-                    único botón primario y el resto subordinado acorta el tiempo
-                    hasta la reproducción.
+                    La aplicación solo ofrece edad y número de temporadas. Sin
+                    año, duración, valoración ni calidad no hay con qué decidir,
+                    y la decisión se va fuera de la app.
                   </td>
                   <td>H8 · Diseño estético y minimalista</td>
                 </tr>
                 <tr>
-                  <td>Búsqueda con estado inicial útil</td>
+                  <td>Búsqueda con memoria, no solo con sugerencias</td>
                   <td>
-                    Con el campo vacío se muestran consultas y filtros recientes
-                    en lugar de una pantalla en blanco, para no obligar a
-                    reconstruir la exploración.
+                    Con el campo vacío la app ya propone contenido popular. Lo
+                    que falta es lo personal: las últimas consultas y filtros,
+                    para no reconstruir la exploración de memoria.
                   </td>
                   <td>H6 · Reconocimiento antes que recuerdo</td>
                 </tr>
@@ -1000,7 +1163,9 @@
             Se rediseña la ficha de detalle de una serie. Es la pantalla donde
             converge todo el flujo y donde el usuario resuelve tres preguntas
             seguidas: qué es esto, por qué me puede interesar y qué hago ahora.
-            Si esa pantalla tarda en responderlas, se vuelve al catálogo.
+            La evaluación demostró que la tercera está bien resuelta y que las
+            dos primeras no: el rediseño no reordena la pantalla, la
+            <strong>completa</strong>.
           </p>
         </div>
 
@@ -1010,10 +1175,10 @@
             <span class="kicker">Punto de partida</span>
             <h3>Antes y después</h3>
             <p>
-              A la izquierda, la reconstrucción de la ficha actual con los
-              problemas detectados en la Parte 1. A la derecha, la propuesta
-              construida con el sistema de componentes que se documenta más
-              abajo.
+              A la izquierda, la ficha actual reconstruida fielmente a partir de
+              la captura de <em>FROM</em>: un CTA dominante, tres acciones y dos
+              metadatos. A la derecha, la propuesta construida con el sistema de
+              componentes que se documenta más abajo.
             </p>
           </div>
 
@@ -1037,87 +1202,61 @@
                     >
                   </div>
                   <div class="p-hero-foot">
-                    <span class="p-title">The Last of Us</span>
-                    <span class="meta-inline"
-                      >2023 · 2 temporadas · 16+ · Drama, Ciencia ficción · 4K
-                      UHD · Audiodescripción</span
-                    >
+                    <span class="p-title">FROM</span>
+                    <span class="meta-min">
+                      <span class="age-badge">16</span>
+                      <span>4 Temporadas</span>
+                    </span>
                   </div>
                 </div>
                 <div class="p-body">
-                  <div class="cta-row">
-                    <button class="btn btn-primary">▶ Reproducir</button>
-                    <button class="btn btn-secondary">Ver tráiler</button>
+                  <button class="real-cta">▶ Ver T1 E1</button>
+                  <div class="plain-actions">
+                    <div><i>＋</i>Mi lista</div>
+                    <div><i>👍</i>Clasificación</div>
+                    <div><i>🎬</i>Tráiler</div>
                   </div>
-                  <div class="mini-actions">
-                    <div><i>+</i>Mi lista</div>
-                    <div><i>↓</i>Descargar</div>
-                    <div><i>↗</i>Compartir</div>
-                    <div><i>★</i>Valorar</div>
-                  </div>
-                  <p class="p-synopsis" style="font-size: 13px">
-                    Veinte años después de que la civilización moderna fuera
-                    destruida, Joel, un superviviente curtido, recibe el encargo
-                    de sacar a Ellie… <b>más</b>
+                  <p class="p-synopsis">
+                    Serie sobre un terrorífico pueblo que atrapa a todas
+                    aquellas personas que lo visitan y sobre los habitantes que
+                    se ven obligados a vivir allí.
                   </p>
-                  <div class="p-tabs">
-                    <span class="on">Episodios</span>
-                    <span>Sugerencias</span>
-                    <span>Extras</span>
-                    <span>Detalles</span>
-                  </div>
-                  <div class="p-eps">
-                    <div class="ep-card">
-                      <div class="ep-thumb"></div>
-                      <div>
-                        <h5>1. Cuando estés perdido en la oscuridad</h5>
-                        <p>81 min</p>
-                      </div>
-                    </div>
-                    <div class="ep-card">
-                      <div class="ep-thumb"></div>
-                      <div>
-                        <h5>2. Infectados</h5>
-                        <p>53 min</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div class="compare-notes">
                 <div class="note bad">
                   <b>1</b>
                   <span
-                    >Los metadatos son una frase corrida. Hay que leerla entera
-                    para extraer un solo dato.</span
+                    >Solo dos metadatos: <code>16</code> y «4 Temporadas». Ni
+                    año, ni género, ni duración, ni calidad.</span
                   >
                 </div>
                 <div class="note bad">
                   <b>2</b>
                   <span
-                    >Dos botones compiten por el mismo espacio y peso. No hay una
-                    acción evidente.</span
+                    >Descargar no aparece aquí, ni en el menú rápido, ni en la
+                    barra inferior. No existe.</span
                   >
                 </div>
                 <div class="note bad">
                   <b>3</b>
                   <span
-                    >Cuatro acciones secundarias de 30&nbsp;px, por debajo del
-                    mínimo táctil de 44&nbsp;px.</span
+                    >«Clasificación» ocupa un tercio de las acciones, por
+                    delante de necesidades más frecuentes.</span
                   >
                 </div>
                 <div class="note bad">
                   <b>4</b>
                   <span
-                    >La serie ya estaba empezada, pero nada lo indica: el botón
-                    dice «Reproducir» sin más.</span
+                    >El hero no comunica si la serie está empezada ni por dónde
+                    va el progreso.</span
                   >
                 </div>
                 <div class="note bad">
                   <b>5</b>
                   <span
-                    >La sinopsis se trunca y obliga a un toque extra para
-                    decidir.</span
+                    >Sin duración ni valoración, no hay forma de saber a qué te
+                    estás comprometiendo.</span
                   >
                 </div>
               </div>
@@ -1223,36 +1362,37 @@
                 <div class="note good">
                   <b>1</b>
                   <span
-                    >Cada dato es una píldora independiente. Se escanean sin
-                    leerlos en orden.</span
+                    >Cinco datos escaneables como píldoras: valoración, año,
+                    temporadas, edad y calidad.</span
                   >
                 </div>
                 <div class="note good">
                   <b>2</b>
                   <span
-                    >Un único botón primario a todo el ancho, en blanco sobre
-                    fondo negro: 20,4:1 de contraste.</span
+                    >Descargar recupera su sitio entre las acciones, con área
+                    táctil de 44&nbsp;px.</span
                   >
                 </div>
                 <div class="note good">
                   <b>3</b>
                   <span
-                    >Acciones secundarias con área táctil de 44&nbsp;px y estado
-                    activo visible en «Mi lista».</span
+                    >El progreso sube al hero: episodio y tiempo restante, no
+                    solo el número de episodio.</span
                   >
                 </div>
                 <div class="note good">
                   <b>4</b>
                   <span
-                    >El progreso sube al hero y el CTA nombra el episodio exacto:
-                    «Reanudar T1:E3».</span
+                    ><em>Se conserva lo que ya funciona:</em> un único CTA
+                    dominante que nombra el episodio.</span
                   >
                 </div>
                 <div class="note good">
                   <b>5</b>
                   <span
-                    >Sinopsis completa y lista de episodios con progreso por
-                    episodio.</span
+                    ><em>Se conserva lo que ya funciona:</em> progreso por
+                    episodio, ahora reforzado con texto y no solo con la
+                    barra.</span
                   >
                 </div>
               </div>
@@ -1990,12 +2130,14 @@
 
         <div class="block">
           <div class="callout" style="border-left-color: var(--ok)">
-            <strong>Resultado.</strong> La pantalla pasa de cinco elementos
-            compitiendo por la atención a una jerarquía de tres niveles —qué es,
-            por dónde ibas, qué haces ahora— y responde a las tres preguntas del
-            usuario sin necesidad de desplazarse ni de tocar nada. El botón
-            principal ya no dice «Reproducir» sino exactamente qué se va a
-            reproducir, que era el dato que faltaba para decidir.
+            <strong>Resultado.</strong> El rediseño no toca lo que la
+            aplicación ya hace bien —un único CTA dominante que nombra el
+            episodio, la sinopsis completa, el progreso por episodio— y añade lo
+            que faltaba: metadatos suficientes para decidir, una franja de
+            progreso que dice cuánto queda y la acción de descarga que hoy no
+            existe en ningún punto del flujo. Corregir por omisión resultó ser
+            un diagnóstico más difícil de ver que el de «hay demasiado ruido»,
+            pero es el que sostienen las capturas.
           </div>
         </div>
       </section>
