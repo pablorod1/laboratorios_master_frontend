@@ -2,18 +2,42 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
+import CircularProgress from '@mui/material/CircularProgress';
 import { TextFieldComponent } from '#common/components/form/text-field';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
 
 interface Props {
   character: Character;
+  isEditable: boolean;
+  isLoading: boolean;
+  error: string;
   onSave: (character: Character) => void;
   onCancel: () => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onSave, onCancel } = props;
+  const { character, isEditable, isLoading, error, onSave, onCancel } = props;
+
+  if (error) {
+    return (
+      <div className={classes.feedback}>
+        <Alert severity="error">{error}</Alert>
+        <Button type="button" variant="outlined" onClick={onCancel}>
+          Back
+        </Button>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className={classes.loading}>
+        <CircularProgress aria-label="Loading character" />
+      </div>
+    );
+  }
 
   return (
     <Formik
@@ -66,16 +90,20 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               </dl>
             </div>
           </div>
-          <TextFieldComponent
-            name="bestSentence"
-            label="Best sentence"
-            multiline={true}
-            rows={3}
-          />
+          {isEditable && (
+            <TextFieldComponent
+              name="bestSentence"
+              label="Best sentence"
+              multiline={true}
+              rows={3}
+            />
+          )}
           <div className={classes.actions}>
-            <Button type="submit" variant="contained" color="primary">
-              Save
-            </Button>
+            {isEditable && (
+              <Button type="submit" variant="contained" color="primary">
+                Save
+              </Button>
+            )}
             <Button type="button" variant="outlined" onClick={onCancel}>
               Back
             </Button>

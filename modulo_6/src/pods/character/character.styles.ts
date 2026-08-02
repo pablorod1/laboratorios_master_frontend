@@ -50,3 +50,18 @@ export const actions = css`
   gap: 1rem;
   margin-top: 1rem;
 `;
+
+export const loading = css`
+  display: grid;
+  min-height: 20rem;
+  place-items: center;
+`;
+
+export const feedback = css`
+  display: flex;
+  max-width: 56rem;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+`;

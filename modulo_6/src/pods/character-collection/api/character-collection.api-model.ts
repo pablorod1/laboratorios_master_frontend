@@ -1,27 +1,4 @@
-interface CharacterLocationApi {
-  name: string;
-  url: string;
-}
+import { CharacterApi, CollectionApiResponse } from '#common/api';
 
-export interface CharacterEntityApi {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: CharacterLocationApi;
-  location: CharacterLocationApi;
-  image: string;
-  episode: string[];
-  url: string;
-  created: string;
-  bestSentence?: string;
-}
-
-export interface CharacterCollectionApiResponse {
-  info: {
-    count: number;
-  };
-  results: CharacterEntityApi[];
-}
+export type CharacterEntityApi = CharacterApi;
+export type CharacterCollectionApiResponse = CollectionApiResponse<CharacterApi>;
