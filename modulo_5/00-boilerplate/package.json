@@ -6,11 +6,19 @@
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
     "start:dev": "vite --open",
+    "start:dev:e2e": "vite --host 127.0.0.1",
     "build": "run-p -l type-check build:prod",
     "build:prod": "npm run clean && vite build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "test": "vitest -c ./config/test/config.ts",
+    "test": "vitest run -c ./config/test/config.ts",
+    "test:watch": "vitest -c ./config/test/config.ts",
+    "e2e": "run-s e2e:cypress e2e:playwright",
+    "e2e:cypress": "start-server-and-test start:dev:e2e http://127.0.0.1:5173 e2e:cypress:run",
+    "e2e:cypress:open": "start-server-and-test start:dev:e2e http://127.0.0.1:5173 e2e:cypress:open:run",
+    "e2e:cypress:run": "cypress run",
+    "e2e:cypress:open:run": "cypress open",
+    "e2e:playwright": "playwright test",
     "clean": "rimraf dist"
   },
   "imports": {
@@ -43,15 +51,18 @@
     "react-spinners": "^0.15.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
+    "cypress": "^15.18.0",
     "jsdom": "^25.0.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
+    "start-server-and-test": "^3.0.11",
     "typescript": "^5.7.2",
     "vite": "^6.0.3",
     "vitest": "^2.1.8"
